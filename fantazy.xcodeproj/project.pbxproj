@@ -14,6 +14,15 @@
 		9047A0CB2FAA7FC4005DDA89 /* fantazy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C92FAA7FC4005DDA89 /* fantazy.xcdatamodeld */; };
 		9047A0CD2FAA7FC5005DDA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9047A0CC2FAA7FC5005DDA89 /* Assets.xcassets */; };
 		9047A0D02FAA7FC5005DDA89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9047A0CE2FAA7FC5005DDA89 /* LaunchScreen.storyboard */; };
+		907CF61D2FABA63500E8DF67 /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF61C2FABA63500E8DF67 /* HomeContract.swift */; };
+		907CF61F2FABA65E00E8DF67 /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF61E2FABA65E00E8DF67 /* NetworkConnectivity.swift */; };
+		907CF6222FABA68C00E8DF67 /* SportsRepositotyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF6212FABA68C00E8DF67 /* SportsRepositotyProtocol.swift */; };
+		907CF6262FABA6C100E8DF67 /* SportsRepositoty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF6252FABA6C100E8DF67 /* SportsRepositoty.swift */; };
+		907CF62B2FABA70200E8DF67 /* LocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF62A2FABA70200E8DF67 /* LocalDataSourceProtocol.swift */; };
+		907CF62D2FABA71C00E8DF67 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF62C2FABA71C00E8DF67 /* LocalDataSource.swift */; };
+		907CF62F2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF62E2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift */; };
+		907CF6312FABA75400E8DF67 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF6302FABA75400E8DF67 /* RemoteDataSource.swift */; };
+		907CF6332FABA83500E8DF67 /* LeadueDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF6322FABA83500E8DF67 /* LeadueDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		9047A0CC2FAA7FC5005DDA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9047A0CF2FAA7FC5005DDA89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9047A0D12FAA7FC5005DDA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		907CF61C2FABA63500E8DF67 /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
+		907CF61E2FABA65E00E8DF67 /* NetworkConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectivity.swift; sourceTree = "<group>"; };
+		907CF6212FABA68C00E8DF67 /* SportsRepositotyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsRepositotyProtocol.swift; sourceTree = "<group>"; };
+		907CF6252FABA6C100E8DF67 /* SportsRepositoty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsRepositoty.swift; sourceTree = "<group>"; };
+		907CF62A2FABA70200E8DF67 /* LocalDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceProtocol.swift; sourceTree = "<group>"; };
+		907CF62C2FABA71C00E8DF67 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		907CF62E2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
+		907CF6302FABA75400E8DF67 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		907CF6322FABA83500E8DF67 /* LeadueDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadueDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,10 @@
 		9047A0BF2FAA7FC4005DDA89 /* fantazy */ = {
 			isa = PBXGroup;
 			children = (
+				907CF6172FABA5F100E8DF67 /* data */,
+				907CF6192FABA60100E8DF67 /* domain */,
+				907CF6182FABA5FA00E8DF67 /* utils */,
+				907CF61A2FABA60700E8DF67 /* presenetation */,
 				9047A0C02FAA7FC4005DDA89 /* AppDelegate.swift */,
 				9047A0C22FAA7FC4005DDA89 /* SceneDelegate.swift */,
 				9047A0C42FAA7FC4005DDA89 /* ViewController.swift */,
@@ -65,9 +87,102 @@
 				9047A0CC2FAA7FC5005DDA89 /* Assets.xcassets */,
 				9047A0CE2FAA7FC5005DDA89 /* LaunchScreen.storyboard */,
 				9047A0D12FAA7FC5005DDA89 /* Info.plist */,
-				9047A0C92FAA7FC4005DDA89 /* fantazy.xcdatamodeld */,
 			);
 			path = fantazy;
+			sourceTree = "<group>";
+		};
+		907CF6172FABA5F100E8DF67 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				907CF6272FABA6D400E8DF67 /* datasources */,
+				907CF6242FABA6B100E8DF67 /* repository */,
+				907CF6232FABA6AB00E8DF67 /* database */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		907CF6182FABA5FA00E8DF67 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				907CF61E2FABA65E00E8DF67 /* NetworkConnectivity.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		907CF6192FABA60100E8DF67 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				907CF6202FABA67100E8DF67 /* repository */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		907CF61A2FABA60700E8DF67 /* presenetation */ = {
+			isa = PBXGroup;
+			children = (
+				907CF61B2FABA62100E8DF67 /* Home */,
+			);
+			path = presenetation;
+			sourceTree = "<group>";
+		};
+		907CF61B2FABA62100E8DF67 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				907CF61C2FABA63500E8DF67 /* HomeContract.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		907CF6202FABA67100E8DF67 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				907CF6212FABA68C00E8DF67 /* SportsRepositotyProtocol.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		907CF6232FABA6AB00E8DF67 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				9047A0C92FAA7FC4005DDA89 /* fantazy.xcdatamodeld */,
+				907CF6322FABA83500E8DF67 /* LeadueDao.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
+		907CF6242FABA6B100E8DF67 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				907CF6252FABA6C100E8DF67 /* SportsRepositoty.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		907CF6272FABA6D400E8DF67 /* datasources */ = {
+			isa = PBXGroup;
+			children = (
+				907CF6292FABA6E300E8DF67 /* remote */,
+				907CF6282FABA6DF00E8DF67 /* local */,
+			);
+			path = datasources;
+			sourceTree = "<group>";
+		};
+		907CF6282FABA6DF00E8DF67 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				907CF62A2FABA70200E8DF67 /* LocalDataSourceProtocol.swift */,
+				907CF62C2FABA71C00E8DF67 /* LocalDataSource.swift */,
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		907CF6292FABA6E300E8DF67 /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				907CF62E2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift */,
+				907CF6302FABA75400E8DF67 /* RemoteDataSource.swift */,
+			);
+			path = remote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +256,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907CF62D2FABA71C00E8DF67 /* LocalDataSource.swift in Sources */,
 				9047A0C52FAA7FC4005DDA89 /* ViewController.swift in Sources */,
+				907CF61F2FABA65E00E8DF67 /* NetworkConnectivity.swift in Sources */,
+				907CF6222FABA68C00E8DF67 /* SportsRepositotyProtocol.swift in Sources */,
+				907CF6312FABA75400E8DF67 /* RemoteDataSource.swift in Sources */,
 				9047A0CB2FAA7FC4005DDA89 /* fantazy.xcdatamodeld in Sources */,
+				907CF6332FABA83500E8DF67 /* LeadueDao.swift in Sources */,
+				907CF61D2FABA63500E8DF67 /* HomeContract.swift in Sources */,
 				9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */,
+				907CF6262FABA6C100E8DF67 /* SportsRepositoty.swift in Sources */,
+				907CF62B2FABA70200E8DF67 /* LocalDataSourceProtocol.swift in Sources */,
 				9047A0C32FAA7FC4005DDA89 /* SceneDelegate.swift in Sources */,
+				907CF62F2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
