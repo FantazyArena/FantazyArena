@@ -16,9 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCM-rh-bEo">
-                                <rect key="frame" x="162" y="438" width="88" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bV-rA-06k">
+                                <rect key="frame" x="163" y="442.5" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hunter here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjV-Gb-CvZ">
+                                <rect key="frame" x="0.0" y="479.5" width="414" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -26,10 +32,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dCM-rh-bEo" secondAttribute="trailing" constant="164.03999999999999" id="067-B6-EXG"/>
-                            <constraint firstItem="dCM-rh-bEo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161.96000000000001" id="eeO-JP-kb7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dCM-rh-bEo" secondAttribute="bottom" constant="403.08999999999997" id="rwu-0U-4f7"/>
-                            <constraint firstItem="dCM-rh-bEo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="393.91000000000003" id="uqf-uN-euq"/>
+                            <constraint firstItem="5bV-rA-06k" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4jw-iY-q8y"/>
+                            <constraint firstItem="HjV-Gb-CvZ" firstAttribute="top" secondItem="5bV-rA-06k" secondAttribute="bottom" constant="16" id="9QG-RN-edm"/>
+                            <constraint firstItem="5bV-rA-06k" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="EGo-yi-73Y"/>
+                            <constraint firstItem="HjV-Gb-CvZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rgi-T0-138"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HjV-Gb-CvZ" secondAttribute="trailing" id="a1x-MY-kbk"/>
                         </constraints>
                     </view>
                 </viewController>
