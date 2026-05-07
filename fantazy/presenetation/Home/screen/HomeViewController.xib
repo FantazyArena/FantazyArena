@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="fantazy" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="pRC-XG-240" id="OHj-0p-yOX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfU-4X-8i3">
+                    <rect key="frame" x="12" y="56" width="390" height="38.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                    <color key="textColor" name="AccentForeground"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pRC-XG-240">
+                    <rect key="frame" x="12" y="118.5" width="390" height="731.5"/>
+                    <color key="backgroundColor" name="Background"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X7H-D0-RhC">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pRC-XG-240" secondAttribute="bottom" constant="12" id="EXV-C2-Dlu"/>
+                <constraint firstItem="pRC-XG-240" firstAttribute="trailing" secondItem="sfU-4X-8i3" secondAttribute="trailing" id="aED-S8-W77"/>
+                <constraint firstItem="sfU-4X-8i3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="aSe-wi-fam"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sfU-4X-8i3" secondAttribute="trailing" constant="12" id="g11-0v-q8N"/>
+                <constraint firstItem="sfU-4X-8i3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="l90-Mv-Y8U"/>
+                <constraint firstItem="pRC-XG-240" firstAttribute="leading" secondItem="sfU-4X-8i3" secondAttribute="leading" id="tmw-yj-8pt"/>
+                <constraint firstItem="pRC-XG-240" firstAttribute="top" secondItem="sfU-4X-8i3" secondAttribute="bottom" constant="24" id="vk6-Jf-FHr"/>
+            </constraints>
+            <point key="canvasLocation" x="308.69565217391306" y="101.78571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AccentForeground">
+            <color red="0.011764705882352941" green="0.0078431372549019607" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Background">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

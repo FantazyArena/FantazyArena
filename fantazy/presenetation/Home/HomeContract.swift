@@ -1,1 +1,10 @@
-// Home Cotnract (Home Preseneter Protocol, Home View Protocol)
+protocol HomePresenterProtocol {
+    func viewDidLoad()
+    func getSportsCount() -> Int
+    func getSport(by index: Int) -> Sport
+    func didSelectSport(sport: Sport)
+}
+
+protocol HomeViewProtocol {
+    func navigateToSportDetails(sport: Sport)
+}
