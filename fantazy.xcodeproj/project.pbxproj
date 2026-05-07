@@ -23,6 +23,7 @@
 		907CF62F2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF62E2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift */; };
 		907CF6312FABA75400E8DF67 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF6302FABA75400E8DF67 /* RemoteDataSource.swift */; };
 		907CF6332FABA83500E8DF67 /* LeadueDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907CF6322FABA83500E8DF67 /* LeadueDao.swift */; };
+		90C72DB72FAC1D41002C1838 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C72DB62FAC1D41002C1838 /* AppColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		907CF62E2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
 		907CF6302FABA75400E8DF67 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		907CF6322FABA83500E8DF67 /* LeadueDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadueDao.swift; sourceTree = "<group>"; };
+		90C72DB62FAC1D41002C1838 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		907CF61A2FABA60700E8DF67 /* presenetation */ = {
 			isa = PBXGroup;
 			children = (
+				90C72DB52FAC1D35002C1838 /* theme */,
 				907CF61B2FABA62100E8DF67 /* Home */,
 			);
 			path = presenetation;
@@ -183,6 +186,14 @@
 				907CF6302FABA75400E8DF67 /* RemoteDataSource.swift */,
 			);
 			path = remote;
+			sourceTree = "<group>";
+		};
+		90C72DB52FAC1D35002C1838 /* theme */ = {
+			isa = PBXGroup;
+			children = (
+				90C72DB62FAC1D41002C1838 /* AppColors.swift */,
+			);
+			path = theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 				9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */,
 				907CF6262FABA6C100E8DF67 /* SportsRepositoty.swift in Sources */,
 				907CF62B2FABA70200E8DF67 /* LocalDataSourceProtocol.swift in Sources */,
+				90C72DB72FAC1D41002C1838 /* AppColors.swift in Sources */,
 				9047A0C32FAA7FC4005DDA89 /* SceneDelegate.swift in Sources */,
 				907CF62F2FABA74100E8DF67 /* RemoteDataSourceProtocol.swift in Sources */,
 			);
