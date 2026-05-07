@@ -16,7 +16,7 @@ class HomePresenter: HomePresenterProtocol {
     
     func viewDidLoad(){  }
     
-    func getSprotsCount() -> Int{
+    func getSportsCount() -> Int{
         return sports.count
     }
     
@@ -24,8 +24,8 @@ class HomePresenter: HomePresenterProtocol {
         return sports[index]
     }
     
-    func onSelectSprot(sport: Sport) {
+    func didSelectSport(sport: Sport) {
         //TODO: Pass to leagues presneter the sport, then navigate
-        view.navigateToSoprtDetails(sport: sport)
+        view.navigateToSportDetails(sport: sport)
     }
 }

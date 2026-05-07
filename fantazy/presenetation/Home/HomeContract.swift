@@ -1,10 +1,10 @@
 protocol HomePresenterProtocol {
     func viewDidLoad()
-    func getSprotsCount() -> Int
+    func getSportsCount() -> Int
     func getSport(by index: Int) -> Sport
-    func onSelectSprot(sport: Sport)
+    func didSelectSport(sport: Sport)
 }
 
 protocol HomeViewProtocol {
-    func navigateToSoprtDetails(sport: Sport)
+    func navigateToSportDetails(sport: Sport)
 }

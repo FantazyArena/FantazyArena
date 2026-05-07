@@ -30,7 +30,7 @@ class HomeViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.getSprotsCount()
+        return presenter.getSportsCount()
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController,
         return CGSize(width: width, height: width)
     }
     
-    func navigateToSoprtDetails(sport: Sport){
+    func navigateToSportDetails(sport: Sport){
         //TODO: navigate to sport details
     }
 }
