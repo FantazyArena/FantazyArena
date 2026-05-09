@@ -4,8 +4,8 @@ enum AppColors {
 
     // MARK: - Backgrounds
 
-    static let background = UIColor(named: "Background")
-    static let card = UIColor(named: "Card")
+    static let background = UIColor(named: "Background")!
+    static let card = UIColor(named: "Card")!
 
     // MARK: - Text Colors
 
@@ -33,7 +33,7 @@ enum AppColors {
 
     // MARK: - Border
 
-    static let border = UIColor(named: "Border")
+    static let border = UIColor(named: "Border")!
 
     // MARK: - Destructive
 

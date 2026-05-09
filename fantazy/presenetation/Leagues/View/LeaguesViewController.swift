@@ -31,18 +31,10 @@ class LeaguesViewController: UIViewController ,
     
     private func setupUI() {
 
+        setupTheme()
+
         tableView.delegate = self
         tableView.dataSource = self
-        
-        self.title = "Leagues"
-        
-        navigationItem.largeTitleDisplayMode = .never
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor(named: "AccentForeground")!,
-            .font: UIFont.boldSystemFont(ofSize: 25)
-        ]
-        
-        self.sportName.text = presenter.getSportName()
         
         tableView.register(
             UINib(nibName: "LeagueTableViewCell", bundle: nil),
@@ -51,6 +43,35 @@ class LeaguesViewController: UIViewController ,
 
         hideAllStates()
     }
+    
+    private func setupTheme() {
+
+          view.backgroundColor = AppColors.background
+
+          title = "Leagues"
+
+          navigationItem.largeTitleDisplayMode = .never
+
+          navigationController?.navigationBar.titleTextAttributes = [
+              .foregroundColor: AppColors.foreground,
+              .font: UIFont.boldSystemFont(ofSize: 25)
+          ]
+
+          navigationController?.navigationBar.tintColor = AppColors.primary
+
+          sportName.text = presenter.getSportName()
+          sportName.textColor = AppColors.foreground
+
+          emptyLabel.textColor = AppColors.mutedForeground
+
+          errorLabel.textColor = AppColors.destructive
+
+          tableView.backgroundColor = .clear
+          tableView.separatorStyle = .none
+
+          loadingIndicator.color = AppColors.primary
+      }
+    
 
     private func hideAllStates() {
 
