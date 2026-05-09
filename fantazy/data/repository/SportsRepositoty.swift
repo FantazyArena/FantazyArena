@@ -24,7 +24,7 @@ class SportsRepositoty: SportsRepositotyProtocol{
             let leagues = [
 
                 League(
-                    name: "Premier League",
+                    name: "Premier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier League",
                     badgeURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLFXtmUsGjZ0tqRZlxNE5jFWnI72nA108RBA&s"
                 ),
 

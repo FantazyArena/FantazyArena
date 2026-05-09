@@ -29,7 +29,8 @@ class LeagueTableViewCell: UITableViewCell {
         containerView.layer.shadowRadius = 6
         containerView.layer.masksToBounds = false
         selectionStyle = .none
-        accessoryType = .disclosureIndicator
+//        accessoryType = .disclosureIndicator
+        arrowImage.image = UIImage(systemName: "chevron.right")
     }
     
 
