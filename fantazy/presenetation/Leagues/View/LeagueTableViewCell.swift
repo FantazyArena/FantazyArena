@@ -22,14 +22,14 @@ class LeagueTableViewCell: UITableViewCell {
         badgeImageView.clipsToBounds = true
         badgeImageView.contentMode = .scaleAspectFill
         containerView.layer.cornerRadius = 12
-
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOpacity = 0.1
         containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
         containerView.layer.shadowRadius = 6
         containerView.layer.masksToBounds = false
         selectionStyle = .none
-//        accessoryType = .disclosureIndicator
         arrowImage.image = UIImage(systemName: "chevron.right")
     }
     

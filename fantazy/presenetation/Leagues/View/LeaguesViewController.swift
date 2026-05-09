@@ -41,7 +41,9 @@ class LeaguesViewController: UIViewController ,
             .foregroundColor: UIColor(named: "AccentForeground")!,
             .font: UIFont.boldSystemFont(ofSize: 25)
         ]
+        
         self.sportName.text = presenter.getSportName()
+        
         tableView.register(
             UINib(nibName: "LeagueTableViewCell", bundle: nil),
             forCellReuseIdentifier: "LeagueTableViewCell"
