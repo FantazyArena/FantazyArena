@@ -1,89 +1,75 @@
-//
-//  TeamCollectionViewCell.swift
-//  fantazy
-//
 
 import UIKit
 import SDWebImage
 
 class TeamCollectionViewCell: UICollectionViewCell {
 
-    // MARK: - UI
+    @IBOutlet weak var ringView: UIView!
+    @IBOutlet weak var badgeImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
 
-    private let badgeImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.backgroundColor = .secondarySystemBackground
-        iv.layer.borderWidth = 2
-        iv.layer.borderColor = UIColor.systemGray5.cgColor
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        return iv
-    }()
-
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 13, weight: .semibold)
-        label.textColor = .label
-        label.textAlignment = .center
-        label.numberOfLines = 2
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    // MARK: - Init
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
+    static let reuseIdentifier = "TeamCollectionViewCell"
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupAppearance()
     }
 
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupUI()
+ 
+    private func setupAppearance() {
+
+        // Ring view styling
+        ringView.backgroundColor = .clear
+        ringView.layer.cornerRadius = 38
+        ringView.layer.borderWidth = 2.5
+        ringView.layer.borderColor = UIColor.separator.cgColor
+        ringView.layer.shadowOpacity = 0.35
+        ringView.layer.shadowOffset = CGSize(width: 0, height: 0)
+
+        updateShadowColor()
+
+        // Badge image
+        badgeImageView.contentMode = .scaleAspectFill
+        badgeImageView.clipsToBounds = true
+        badgeImageView.layer.cornerRadius = 35
+        badgeImageView.backgroundColor = .secondarySystemBackground
+
+        // Name label
+        nameLabel.font = .systemFont(ofSize: 13, weight: .semibold)
+        nameLabel.textColor = .label
+        nameLabel.textAlignment = .center
+        nameLabel.numberOfLines = 2
     }
 
-    // MARK: - Setup
-
-    private func setupUI() {
-        contentView.addSubview(badgeImageView)
-        contentView.addSubview(nameLabel)
-
-        NSLayoutConstraint.activate([
-            // Circle image — centered, 70x70
-            badgeImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            badgeImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            badgeImageView.widthAnchor.constraint(equalToConstant: 70),
-            badgeImageView.heightAnchor.constraint(equalToConstant: 70),
-
-            // Name below image
-            nameLabel.topAnchor.constraint(equalTo: badgeImageView.bottomAnchor, constant: 8),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
-            nameLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -4)
-        ])
+    private func updateShadowColor() {
+        ringView.layer.shadowColor = UIColor.label.cgColor
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        // Make it a perfect circle after layout
-        badgeImageView.layer.cornerRadius = badgeImageView.frame.width / 2
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateShadowColor()
+        ringView.layer.borderColor = UIColor.separator.cgColor
     }
-
-    // MARK: - Configure
 
     func configure(with team: Team) {
         nameLabel.text = team.name
 
         if let urlStr = team.badgeURL, let url = URL(string: urlStr) {
+
             badgeImageView.sd_setImage(
                 with: url,
-                placeholderImage: UIImage(systemName: "sportscourt.fill"),
-                options: [.highPriority]
+                placeholderImage: UIImage(systemName: "sportscourt.fill")
             )
         } else {
             badgeImageView.image = UIImage(systemName: "sportscourt.fill")
-            badgeImageView.tintColor = .systemGray3
+            badgeImageView.tintColor = .secondaryLabel
         }
+    }
+
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        badgeImageView.image = nil
+        badgeImageView.sd_cancelCurrentImageLoad()
     }
 }
