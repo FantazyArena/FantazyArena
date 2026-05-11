@@ -3,14 +3,14 @@ import SDWebImage
 
 class LeagueTableViewCell: UITableViewCell {
 
-
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var badgeImageView: UIImageView!
-    @IBOutlet weak var leagueNameLabel: UILabel!
-    @IBOutlet weak var arrowImage: UIImageView!
-
-
     private let gradientLayer = CAGradientLayer()
+
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var badgeImageView: UIImageView!
+    @IBOutlet private weak var leagueNameLabel: UILabel!
+    @IBOutlet private weak var arrowImage: UIImageView!
+
+
 
 
     override func awakeFromNib() {
@@ -27,7 +27,31 @@ class LeagueTableViewCell: UITableViewCell {
         badgeImageView.layer.cornerRadius =
             badgeImageView.frame.width / 2
     }
+    
+    func configure(with league: League) {
 
+        leagueNameLabel.text = league.name
+
+        if let badgeURL = league.badgeURL,
+           let url = URL(string: badgeURL) {
+
+            badgeImageView.sd_setImage(
+                with: url,
+                placeholderImage: UIImage(systemName: "sportscourt"),
+                options: [
+                    .highPriority,
+                    .continueInBackground,
+                    .progressiveLoad
+                ],
+                completed: nil
+            )
+
+        } else {
+
+            badgeImageView.image =
+                UIImage(systemName: "sportscourt")
+        }
+    }
 
     private func setupUI() {
 
@@ -96,32 +120,6 @@ class LeagueTableViewCell: UITableViewCell {
                 gradientLayer,
                 at: 0
             )
-        }
-    }
-
-    
-    func configure(with league: League) {
-
-        leagueNameLabel.text = league.name
-
-        if let badgeURL = league.badgeURL,
-           let url = URL(string: badgeURL) {
-
-            badgeImageView.sd_setImage(
-                with: url,
-                placeholderImage: UIImage(systemName: "sportscourt"),
-                options: [
-                    .highPriority,
-                    .continueInBackground,
-                    .progressiveLoad
-                ],
-                completed: nil
-            )
-
-        } else {
-
-            badgeImageView.image =
-                UIImage(systemName: "sportscourt")
         }
     }
 
