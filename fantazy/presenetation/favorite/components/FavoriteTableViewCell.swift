@@ -28,7 +28,7 @@ class FavoriteTableViewCell: UITableViewCell {
         //TODO: get image using sdkWebImage
         leagueImage.image = UIImage(named: "Football") // Testing
         
-        leagueName.text = league.league
+        leagueName.text = league.name
         countryName.text = league.countryName
     }
 }

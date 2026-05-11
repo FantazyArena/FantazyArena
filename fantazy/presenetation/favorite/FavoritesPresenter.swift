@@ -3,9 +3,9 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
     let view: FavoritesViewProtocol
     
     let dummyData = [
-        League(countryName: "Egypt", league: "Primuim", thumbnail: ""),
-        League(countryName: "USA", league: "Silver", thumbnail: ""),
-        League(countryName: "France", league: "Gold", thumbnail: ""),
+        League(name: "Primuim", badgeURL: "", countryName: "Egypt"),
+        League(name: "Silver", badgeURL: "", countryName: "Egypt"),
+        League(name: "Gold", badgeURL: "", countryName: "Egypt"),
     ]
     
     init(view: FavoritesViewProtocol){
