@@ -22,6 +22,12 @@
 		9047A0CB2FAA7FC4005DDA89 /* fantazy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C92FAA7FC4005DDA89 /* fantazy.xcdatamodeld */; };
 		9047A0CD2FAA7FC5005DDA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9047A0CC2FAA7FC5005DDA89 /* Assets.xcassets */; };
 		9047A0D02FAA7FC5005DDA89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9047A0CE2FAA7FC5005DDA89 /* LaunchScreen.storyboard */; };
+		906A7D282FB222DA00CC9913 /* FavoritesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A7D202FB222DA00CC9913 /* FavoritesContract.swift */; };
+		906A7D292FB222DA00CC9913 /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 906A7D222FB222DA00CC9913 /* FavoriteTableViewCell.xib */; };
+		906A7D2A2FB222DA00CC9913 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A7D232FB222DA00CC9913 /* FavoriteTableViewCell.swift */; };
+		906A7D2B2FB222DA00CC9913 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A7D252FB222DA00CC9913 /* FavoritesViewController.swift */; };
+		906A7D2C2FB222DA00CC9913 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 906A7D262FB222DA00CC9913 /* FavoritesViewController.xib */; };
+		906A7D2D2FB222DA00CC9913 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A7D272FB222DA00CC9913 /* FavoritesPresenter.swift */; };
 		9071925C2FAE398E00F7EAC2 /* components in Resources */ = {isa = PBXBuildFile; fileRef = 9071925B2FAE398D00F7EAC2 /* components */; };
 		9071925E2FAE399600F7EAC2 /* screen in Resources */ = {isa = PBXBuildFile; fileRef = 9071925D2FAE399600F7EAC2 /* screen */; };
 		907192602FAE3A2300F7EAC2 /* SportsRepositoty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071925F2FAE3A2300F7EAC2 /* SportsRepositoty.swift */; };
@@ -52,6 +58,12 @@
 		9047A0CC2FAA7FC5005DDA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9047A0CF2FAA7FC5005DDA89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9047A0D12FAA7FC5005DDA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		906A7D202FB222DA00CC9913 /* FavoritesContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesContract.swift; sourceTree = "<group>"; };
+		906A7D222FB222DA00CC9913 /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
+		906A7D232FB222DA00CC9913 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		906A7D252FB222DA00CC9913 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		906A7D262FB222DA00CC9913 /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		906A7D272FB222DA00CC9913 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 		9071925B2FAE398D00F7EAC2 /* components */ = {isa = PBXFileReference; lastKnownFileType = folder; path = components; sourceTree = "<group>"; };
 		9071925D2FAE399600F7EAC2 /* screen */ = {isa = PBXFileReference; lastKnownFileType = folder; path = screen; sourceTree = "<group>"; };
 		9071925F2FAE3A2300F7EAC2 /* SportsRepositoty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsRepositoty.swift; sourceTree = "<group>"; };
@@ -153,6 +165,35 @@
 			path = fantazy;
 			sourceTree = "<group>";
 		};
+		906A7D1F2FB222DA00CC9913 /* favorite */ = {
+			isa = PBXGroup;
+			children = (
+				906A7D202FB222DA00CC9913 /* FavoritesContract.swift */,
+				906A7D212FB222DA00CC9913 /* components */,
+				906A7D242FB222DA00CC9913 /* screen */,
+				906A7D272FB222DA00CC9913 /* FavoritesPresenter.swift */,
+			);
+			path = favorite;
+			sourceTree = "<group>";
+		};
+		906A7D212FB222DA00CC9913 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				906A7D222FB222DA00CC9913 /* FavoriteTableViewCell.xib */,
+				906A7D232FB222DA00CC9913 /* FavoriteTableViewCell.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		906A7D242FB222DA00CC9913 /* screen */ = {
+			isa = PBXGroup;
+			children = (
+				906A7D252FB222DA00CC9913 /* FavoritesViewController.swift */,
+				906A7D262FB222DA00CC9913 /* FavoritesViewController.xib */,
+			);
+			path = screen;
+			sourceTree = "<group>";
+		};
 		907CF6172FABA5F100E8DF67 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +223,7 @@
 		907CF61A2FABA60700E8DF67 /* presenetation */ = {
 			isa = PBXGroup;
 			children = (
+				906A7D1F2FB222DA00CC9913 /* favorite */,
 				58408EB52FAD3CC6003504FE /* Leagues */,
 				90C72DB52FAC1D35002C1838 /* theme */,
 				907CF61B2FABA62100E8DF67 /* Home */,
@@ -328,7 +370,10 @@
 				908A80B32FAE3BB8000C49CE /* Main.storyboard in Resources */,
 				9071925C2FAE398E00F7EAC2 /* components in Resources */,
 				9047A0D02FAA7FC5005DDA89 /* LaunchScreen.storyboard in Resources */,
+				906A7D292FB222DA00CC9913 /* FavoriteTableViewCell.xib in Resources */,
 				9047A0CD2FAA7FC5005DDA89 /* Assets.xcassets in Resources */,
+				906A7D2C2FB222DA00CC9913 /* FavoritesViewController.xib in Resources */,
+				9047A0C82FAA7FC4005DDA89 /* Main.storyboard in Resources */,
 				58408ECA2FAD6C94003504FE /* LeagueTableViewCell.xib in Resources */,
 				9071925E2FAE399600F7EAC2 /* screen in Resources */,
 				58408EC22FAD5A84003504FE /* LeaguesViewController.xib in Resources */,
@@ -351,10 +396,16 @@
 				907CF6312FABA75400E8DF67 /* RemoteDataSource.swift in Sources */,
 				9047A0CB2FAA7FC4005DDA89 /* fantazy.xcdatamodeld in Sources */,
 				907CF6332FABA83500E8DF67 /* LeadueDao.swift in Sources */,
+				906A7D282FB222DA00CC9913 /* FavoritesContract.swift in Sources */,
+				906A7D2B2FB222DA00CC9913 /* FavoritesViewController.swift in Sources */,
 				907CF61D2FABA63500E8DF67 /* HomeContract.swift in Sources */,
+				906A7D2A2FB222DA00CC9913 /* FavoriteTableViewCell.swift in Sources */,
+				9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */,
+				907CF6262FABA6C100E8DF67 /* SportsRepositoty.swift in Sources */,
 				907192602FAE3A2300F7EAC2 /* SportsRepositoty.swift in Sources */,
 				90F4A0012FAE35340065A241 /* RemoteDataSourceProtocol.swift in Sources */,
 				907CF62B2FABA70200E8DF67 /* LocalDataSourceProtocol.swift in Sources */,
+				906A7D2D2FB222DA00CC9913 /* FavoritesPresenter.swift in Sources */,
 				90C72DB72FAC1D41002C1838 /* AppColors.swift in Sources */,
 				58408EBA2FAD3D7E003504FE /* League.swift in Sources */,
 				90C72DC62FAC2CDE002C1838 /* HomePresenter.swift in Sources */,
