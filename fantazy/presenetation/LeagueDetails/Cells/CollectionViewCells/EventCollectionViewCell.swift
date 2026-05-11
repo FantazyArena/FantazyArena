@@ -65,8 +65,8 @@ class EventCollectionViewCell: UICollectionViewCell {
         dateTimeLabel.text = "\(event.date)  •  \(event.time)"
         homeNameLabel.text = event.homeTeam.name
         awayNameLabel.text = event.awayTeam.name
-        loadImage(into: homeImageView, urlStr: event.homeTeam.badgeURL)
-        loadImage(into: awayImageView, urlStr: event.awayTeam.badgeURL)
+        loadImage(into: homeImageView, urlStr: event.homeTeam.thumbnail)
+        loadImage(into: awayImageView, urlStr: event.awayTeam.thumbnail)
     }
 
     private func loadImage(into imageView: UIImageView, urlStr: String?) {

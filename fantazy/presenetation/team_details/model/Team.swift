@@ -13,7 +13,7 @@ class Player{
 }
 
 class Team{
-    let thumbnail: String
+    let thumbnail: String?
     let name: String
     let founded: String
     let stadium: String
