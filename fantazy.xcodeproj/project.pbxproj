@@ -19,7 +19,6 @@
 		58408ECA2FAD6C94003504FE /* LeagueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58408EC92FAD6C94003504FE /* LeagueTableViewCell.xib */; };
 		584140A92FAF95E600E91D04 /* LeagueDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584140A82FAF95E600E91D04 /* LeagueDetailsPresenter.swift */; };
 		584140AB2FAF960300E91D04 /* LeagueDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584140AA2FAF960300E91D04 /* LeagueDetailsPresenterProtocol.swift */; };
-		584140B22FAF9A2500E91D04 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584140B12FAF9A2500E91D04 /* Team.swift */; };
 		584140B92FAFBA7C00E91D04 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584140B82FAFBA7C00E91D04 /* Event.swift */; };
 		584140C82FAFC5A000E91D04 /* LeagueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584140C62FAFC5A000E91D04 /* LeagueDetailsViewController.swift */; };
 		584140C92FAFC5A000E91D04 /* LeagueDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 584140C72FAFC5A000E91D04 /* LeagueDetailsViewController.xib */; };
@@ -74,7 +73,6 @@
 		58408EC92FAD6C94003504FE /* LeagueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTableViewCell.xib; sourceTree = "<group>"; };
 		584140A82FAF95E600E91D04 /* LeagueDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsPresenter.swift; sourceTree = "<group>"; };
 		584140AA2FAF960300E91D04 /* LeagueDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
-		584140B12FAF9A2500E91D04 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		584140B82FAFBA7C00E91D04 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		584140C62FAFC5A000E91D04 /* LeagueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsViewController.swift; sourceTree = "<group>"; };
 		584140C72FAFC5A000E91D04 /* LeagueDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueDetailsViewController.xib; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 		584140B02FAF9A1100E91D04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				584140B12FAF9A2500E91D04 /* Team.swift */,
 				584140B82FAFBA7C00E91D04 /* Event.swift */,
 			);
 			path = Model;
@@ -526,7 +523,6 @@
 				906A7D6C2FB22BEE00CC9913 /* TeamDetailsViewController.xib in Resources */,
 				906A7D2C2FB222DA00CC9913 /* FavoritesViewController.xib in Resources */,
 				906A7D672FB22BEE00CC9913 /* PlayerTableViewCell.xib in Resources */,
-				9047A0C82FAA7FC4005DDA89 /* Main.storyboard in Resources */,
 				58408ECA2FAD6C94003504FE /* LeagueTableViewCell.xib in Resources */,
 				58091E622FB17A050059B3CC /* TeamCollectionViewCell.xib in Resources */,
 				9071925E2FAE399600F7EAC2 /* screen in Resources */,
@@ -563,7 +559,6 @@
 				9047A0CB2FAA7FC4005DDA89 /* fantazy.xcdatamodeld in Sources */,
 				584140B92FAFBA7C00E91D04 /* Event.swift in Sources */,
 				907CF6332FABA83500E8DF67 /* LeadueDao.swift in Sources */,
-				584140B22FAF9A2500E91D04 /* Team.swift in Sources */,
 				906A7D282FB222DA00CC9913 /* FavoritesContract.swift in Sources */,
 				906A7D682FB22BEE00CC9913 /* PlayerTableViewCell.swift in Sources */,
 				906A7D2B2FB222DA00CC9913 /* FavoritesViewController.swift in Sources */,
@@ -575,7 +570,6 @@
 				907CF61D2FABA63500E8DF67 /* HomeContract.swift in Sources */,
 				906A7D2A2FB222DA00CC9913 /* FavoriteTableViewCell.swift in Sources */,
 				9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */,
-				907CF6262FABA6C100E8DF67 /* SportsRepositoty.swift in Sources */,
 				907192602FAE3A2300F7EAC2 /* SportsRepositoty.swift in Sources */,
 				90F4A0012FAE35340065A241 /* RemoteDataSourceProtocol.swift in Sources */,
 				907CF62B2FABA70200E8DF67 /* LocalDataSourceProtocol.swift in Sources */,

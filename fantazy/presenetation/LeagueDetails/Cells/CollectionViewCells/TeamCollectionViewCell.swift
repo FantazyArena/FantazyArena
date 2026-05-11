@@ -54,7 +54,7 @@ class TeamCollectionViewCell: UICollectionViewCell {
     func configure(with team: Team) {
         nameLabel.text = team.name
 
-        if let urlStr = team.badgeURL, let url = URL(string: urlStr) {
+        if let urlStr = team.thumbnail, let url = URL(string: urlStr) {
 
             badgeImageView.sd_setImage(
                 with: url,
