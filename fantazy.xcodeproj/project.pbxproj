@@ -25,6 +25,9 @@
 		584140E22FAFD90300E91D04 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584140E02FAFD90300E91D04 /* EventCollectionViewCell.swift */; };
 		588222712FAD9E72000C760B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 588222702FAD9E72000C760B /* SDWebImage */; };
 		588222732FAD9E72000C760B /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 588222722FAD9E72000C760B /* SDWebImageMapKit */; };
+		902548C32FB2D70F00CA8601 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902548C22FB2D70F00CA8601 /* NetworkManager.swift */; };
+		902548C62FB2D8A400CA8601 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 902548C52FB2D8A400CA8601 /* Alamofire */; };
+		902548C82FB2D91400CA8601 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902548C72FB2D91400CA8601 /* Endpoint.swift */; };
 		9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C02FAA7FC4005DDA89 /* AppDelegate.swift */; };
 		9047A0C32FAA7FC4005DDA89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C22FAA7FC4005DDA89 /* SceneDelegate.swift */; };
 		9047A0C52FAA7FC4005DDA89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C42FAA7FC4005DDA89 /* ViewController.swift */; };
@@ -78,6 +81,8 @@
 		584140C72FAFC5A000E91D04 /* LeagueDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueDetailsViewController.xib; sourceTree = "<group>"; };
 		584140DA2FAFD8C300E91D04 /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
 		584140E02FAFD90300E91D04 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		902548C22FB2D70F00CA8601 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		902548C72FB2D91400CA8601 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		9047A0BD2FAA7FC4005DDA89 /* fantazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fantazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9047A0C02FAA7FC4005DDA89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9047A0C22FAA7FC4005DDA89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				902548C62FB2D8A400CA8601 /* Alamofire in Frameworks */,
 				588222732FAD9E72000C760B /* SDWebImageMapKit in Frameworks */,
 				588222712FAD9E72000C760B /* SDWebImage in Frameworks */,
 			);
@@ -298,6 +304,8 @@
 		906A7D6E2FB234AA00CC9913 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				902548C22FB2D70F00CA8601 /* NetworkManager.swift */,
+				902548C72FB2D91400CA8601 /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -504,6 +512,7 @@
 			packageProductDependencies = (
 				588222702FAD9E72000C760B /* SDWebImage */,
 				588222722FAD9E72000C760B /* SDWebImageMapKit */,
+				902548C52FB2D8A400CA8601 /* Alamofire */,
 			);
 			productName = fantazy;
 			productReference = 9047A0BD2FAA7FC4005DDA89 /* fantazy.app */;
@@ -535,6 +544,7 @@
 			mainGroup = 9047A0B42FAA7FC4005DDA89;
 			packageReferences = (
 				5882226F2FAD9E72000C760B /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				902548C42FB2D8A400CA8601 /* XCRemoteSwiftPackageReference "alamofire" */,
 			);
 			productRefGroup = 9047A0BE2FAA7FC4005DDA89 /* Products */;
 			projectDirPath = "";
@@ -594,6 +604,7 @@
 				907CF6312FABA75400E8DF67 /* RemoteDataSource.swift in Sources */,
 				9047A0CB2FAA7FC4005DDA89 /* fantazy.xcdatamodeld in Sources */,
 				584140B92FAFBA7C00E91D04 /* Event.swift in Sources */,
+				902548C82FB2D91400CA8601 /* Endpoint.swift in Sources */,
 				907CF6332FABA83500E8DF67 /* LeadueDao.swift in Sources */,
 				906A7D282FB222DA00CC9913 /* FavoritesContract.swift in Sources */,
 				906A7D682FB22BEE00CC9913 /* PlayerTableViewCell.swift in Sources */,
@@ -601,6 +612,7 @@
 				907CF61D2FABA63500E8DF67 /* HomeContract.swift in Sources */,
 				906A7D2A2FB222DA00CC9913 /* FavoriteTableViewCell.swift in Sources */,
 				906A7D6A2FB22BEE00CC9913 /* Team.swift in Sources */,
+				902548C32FB2D70F00CA8601 /* NetworkManager.swift in Sources */,
 				9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */,
 				906A7D742FB235B600CC9913 /* League.swift in Sources */,
 				906A7D2B2FB222DA00CC9913 /* FavoritesViewController.swift in Sources */,
@@ -837,6 +849,15 @@
 				version = 5.10.0;
 			};
 		};
+		902548C42FB2D8A400CA8601 /* XCRemoteSwiftPackageReference "alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alamofire/alamofire";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 6.0.0;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -849,6 +870,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5882226F2FAD9E72000C760B /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		902548C52FB2D8A400CA8601 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 902548C42FB2D8A400CA8601 /* XCRemoteSwiftPackageReference "alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 
