@@ -12,7 +12,7 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
     @IBOutlet var youtube: UIView!
     
     @IBOutlet var teamStadium: UILabel!
-    @IBOutlet var teamCoach: UILabel!
+    @IBOutlet var teamNationality: UILabel!
     @IBOutlet var teamFoundedDate: UILabel!
     @IBOutlet var teamName: UILabel!
     @IBOutlet var teamImage: UIImageView!
@@ -95,13 +95,13 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
         tableView.reloadData()
     }
     
-    func loadTeam(team: Team){
+    func loadTeam(team: TeamDetails){
         // Test the image
         teamImage.image = UIImage(named: "basketball")
         
         //TODO: get the image using SDWebImage
         teamName.text = team.name
-        teamCoach.text = team.coach
+        teamNationality.text = team.national
         teamStadium.text = team.stadium
         teamFoundedDate.text = team.founded
     }

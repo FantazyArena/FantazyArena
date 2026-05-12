@@ -7,5 +7,5 @@ protocol TeamDetailsPresenterProtocol {
 
 protocol TeamDetailsViewProtocol {
     func loadPlayers(players: [Player])
-    func loadTeam(team: Team)
+    func loadTeam(team: TeamDetails)
 }

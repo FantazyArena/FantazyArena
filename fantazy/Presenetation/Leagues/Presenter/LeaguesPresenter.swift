@@ -10,11 +10,11 @@ class LeaguesPresenter : LeaguesPresenterProtocol {
     weak var view: LeaguesViewProtocol?
     private var leagues :[League] = []
 
-    private let repository : SportsRepositotyProtocol
+    private let repository : SportsRepositoryProtocol
     private let sport : Sport
 
     init(view:LeaguesViewProtocol,
-         repository:SportsRepositotyProtocol,
+         repository: SportsRepositoryProtocol,
          sport: Sport){
         
         self.view = view
@@ -24,29 +24,7 @@ class LeaguesPresenter : LeaguesPresenterProtocol {
     
     func viewDidLoad(){
         view?.showLoading()
-        
-        repository.fetchLeagues(sport: sport) { [weak self] (result: Result<[League], Error>) in
-
-                    guard let self = self else { return }
-
-                    self.view?.hideLoading()
-
-                    switch result {
-
-                    case .success(let data):
-
-                        self.leagues = data
-
-                        if data.isEmpty {
-                            self.view?.showEmpty()
-                        } else {
-                            self.view?.reloadData()
-                        }
-
-                    case .failure(let error):
-                        self.view?.showError(message: error.localizedDescription)
-                    }
-                }
+        // TODO: fetch leagues
     }
     
     func getSportName() -> String {
