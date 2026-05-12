@@ -220,6 +220,12 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
               league: "Champions League",
               status: .upcoming)
     ]
+    
+    private let league: League
+
+    init(league: League) {
+        self.league = league
+    }
 
     func viewDidLoad() {
         view?.reloadTeams()

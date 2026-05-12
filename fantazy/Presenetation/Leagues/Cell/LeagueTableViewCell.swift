@@ -11,8 +11,6 @@ class LeagueTableViewCell: UITableViewCell {
     @IBOutlet private weak var arrowImage: UIImageView!
 
 
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
 

@@ -1,7 +1,7 @@
 class LocalDataSource: LocalDataSourceProtocol {
-    let leagueDao: LeagueDao
+    let leagueDao: LeagueDAO
     
-    init(leagueDao: LeagueDao){
+    init(leagueDao: LeagueDAO){
         self.leagueDao = leagueDao
     }
 }

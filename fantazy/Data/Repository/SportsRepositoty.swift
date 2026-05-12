@@ -2,7 +2,7 @@ import Foundation
 
 class SportsRepositoty: SportsRepositotyProtocol{
     
-    static let shared: SportsRepositotyProtocol = SportsRepositoty(local: LocalDataSource(leagueDao: LeagueDao()), remote: RemoteDataSource())
+    static let shared: SportsRepositotyProtocol = SportsRepositoty(local: LocalDataSource(leagueDao: LeagueDAO.shared), remote: RemoteDataSource())
     
     let local: LocalDataSourceProtocol
     let remote: RemoteDataSourceProtocol
