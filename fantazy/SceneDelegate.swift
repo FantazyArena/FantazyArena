@@ -18,19 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             options connectionOptions: UIScene.ConnectionOptions
         ) {
 
-            guard let windowScene = scene as? UIWindowScene else {
-                return
-            }
+          guard let windowScene = scene as? UIWindowScene else {
+              return
+          }
 
-            let window = UIWindow(windowScene: windowScene)
+          let window = UIWindow(windowScene: windowScene)
+          coordinator = AppCoordinator(window: window)
+          coordinator?.start()
 
-            coordinator = AppCoordinator(window: window)
-
-            coordinator?.start()
-
-            self.window = window
-        }
-    
+          self.window = window
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
