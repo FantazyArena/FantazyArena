@@ -25,7 +25,6 @@ class EventCollectionViewCell: UICollectionViewCell {
 
     private func setupAppearance() {
         // Card
-        cardView.backgroundColor = .secondarySystemBackground
         cardView.layer.cornerRadius = 16
         cardView.clipsToBounds = true
 
