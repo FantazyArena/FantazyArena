@@ -25,9 +25,13 @@
 		584140E22FAFD90300E91D04 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584140E02FAFD90300E91D04 /* EventCollectionViewCell.swift */; };
 		588222712FAD9E72000C760B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 588222702FAD9E72000C760B /* SDWebImage */; };
 		588222732FAD9E72000C760B /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 588222722FAD9E72000C760B /* SDWebImageMapKit */; };
+		9018B1432FB3181B00ABE300 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018B1422FB3181B00ABE300 /* APIConfig.swift */; };
+		9018B1462FB3192700ABE300 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9018B1452FB3192700ABE300 /* Alamofire */; };
+		9018B1492FB31CE000ABE300 /* AllLeaguesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018B1482FB31CE000ABE300 /* AllLeaguesEndpoint.swift */; };
+		9018B14B2FB31D8E00ABE300 /* ApiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018B14A2FB31D8E00ABE300 /* ApiType.swift */; };
+		9018B14F2FB3272200ABE300 /* AllLeaguesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018B14E2FB3272200ABE300 /* AllLeaguesResponseDTO.swift */; };
 		902548C32FB2D70F00CA8601 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902548C22FB2D70F00CA8601 /* NetworkManager.swift */; };
-		902548C62FB2D8A400CA8601 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 902548C52FB2D8A400CA8601 /* Alamofire */; };
-		902548C82FB2D91400CA8601 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902548C72FB2D91400CA8601 /* Endpoint.swift */; };
+		902548CE2FB2DCA000CA8601 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902548CD2FB2DCA000CA8601 /* Endpoint.swift */; };
 		9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C02FAA7FC4005DDA89 /* AppDelegate.swift */; };
 		9047A0C32FAA7FC4005DDA89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C22FAA7FC4005DDA89 /* SceneDelegate.swift */; };
 		9047A0C52FAA7FC4005DDA89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C42FAA7FC4005DDA89 /* ViewController.swift */; };
@@ -81,8 +85,13 @@
 		584140C72FAFC5A000E91D04 /* LeagueDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueDetailsViewController.xib; sourceTree = "<group>"; };
 		584140DA2FAFD8C300E91D04 /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
 		584140E02FAFD90300E91D04 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		9018B1422FB3181B00ABE300 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		9018B1482FB31CE000ABE300 /* AllLeaguesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLeaguesEndpoint.swift; sourceTree = "<group>"; };
+		9018B14A2FB31D8E00ABE300 /* ApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiType.swift; sourceTree = "<group>"; };
+		9018B14D2FB3215400ABE300 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
+		9018B14E2FB3272200ABE300 /* AllLeaguesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLeaguesResponseDTO.swift; sourceTree = "<group>"; };
 		902548C22FB2D70F00CA8601 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		902548C72FB2D91400CA8601 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		902548CD2FB2DCA000CA8601 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		9047A0BD2FAA7FC4005DDA89 /* fantazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fantazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9047A0C02FAA7FC4005DDA89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9047A0C22FAA7FC4005DDA89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				902548C62FB2D8A400CA8601 /* Alamofire in Frameworks */,
+				9018B1462FB3192700ABE300 /* Alamofire in Frameworks */,
 				588222732FAD9E72000C760B /* SDWebImageMapKit in Frameworks */,
 				588222712FAD9E72000C760B /* SDWebImage in Frameworks */,
 			);
@@ -211,11 +220,38 @@
 			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
+		9018B1442FB3192700ABE300 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9018B1472FB31BD400ABE300 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				902548CD2FB2DCA000CA8601 /* Endpoint.swift */,
+				9018B1482FB31CE000ABE300 /* AllLeaguesEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		9018B14C2FB31E4000ABE300 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				9018B1422FB3181B00ABE300 /* APIConfig.swift */,
+				9018B14A2FB31D8E00ABE300 /* ApiType.swift */,
+				9018B14D2FB3215400ABE300 /* ApiKeys.xcconfig */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		9047A0B42FAA7FC4005DDA89 = {
 			isa = PBXGroup;
 			children = (
 				9047A0BF2FAA7FC4005DDA89 /* fantazy */,
 				9047A0BE2FAA7FC4005DDA89 /* Products */,
+				9018B1442FB3192700ABE300 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,8 +340,9 @@
 		906A7D6E2FB234AA00CC9913 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9018B14C2FB31E4000ABE300 /* Api */,
+				9018B1472FB31BD400ABE300 /* Endpoint */,
 				902548C22FB2D70F00CA8601 /* NetworkManager.swift */,
-				902548C72FB2D91400CA8601 /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -375,6 +412,7 @@
 		906A7D7B2FB2386C00CC9913 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				9018B14E2FB3272200ABE300 /* AllLeaguesResponseDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -512,7 +550,7 @@
 			packageProductDependencies = (
 				588222702FAD9E72000C760B /* SDWebImage */,
 				588222722FAD9E72000C760B /* SDWebImageMapKit */,
-				902548C52FB2D8A400CA8601 /* Alamofire */,
+				9018B1452FB3192700ABE300 /* Alamofire */,
 			);
 			productName = fantazy;
 			productReference = 9047A0BD2FAA7FC4005DDA89 /* fantazy.app */;
@@ -544,7 +582,7 @@
 			mainGroup = 9047A0B42FAA7FC4005DDA89;
 			packageReferences = (
 				5882226F2FAD9E72000C760B /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				902548C42FB2D8A400CA8601 /* XCRemoteSwiftPackageReference "alamofire" */,
+				9018B1412FB316E200ABE300 /* XCRemoteSwiftPackageReference "alamofire" */,
 			);
 			productRefGroup = 9047A0BE2FAA7FC4005DDA89 /* Products */;
 			projectDirPath = "";
@@ -585,11 +623,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				584140DC2FAFD8C300E91D04 /* TeamCollectionViewCell.swift in Sources */,
+				9018B1432FB3181B00ABE300 /* APIConfig.swift in Sources */,
 				58091E662FB184A40059B3CC /* SectionHeaderReusableView.swift in Sources */,
 				584140E22FAFD90300E91D04 /* EventCollectionViewCell.swift in Sources */,
 				907CF62D2FABA71C00E8DF67 /* LocalDataSource.swift in Sources */,
 				58408EC82FAD6C5F003504FE /* LeagueTableViewCell.swift in Sources */,
 				9047A0C52FAA7FC4005DDA89 /* ViewController.swift in Sources */,
+				9018B14F2FB3272200ABE300 /* AllLeaguesResponseDTO.swift in Sources */,
 				9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */,
 				906A7D692FB22BEE00CC9913 /* TeamDetailsContract.swift in Sources */,
 				584140A92FAF95E600E91D04 /* LeagueDetailsPresenter.swift in Sources */,
@@ -604,17 +644,18 @@
 				907CF6312FABA75400E8DF67 /* RemoteDataSource.swift in Sources */,
 				9047A0CB2FAA7FC4005DDA89 /* fantazy.xcdatamodeld in Sources */,
 				584140B92FAFBA7C00E91D04 /* Event.swift in Sources */,
-				902548C82FB2D91400CA8601 /* Endpoint.swift in Sources */,
 				907CF6332FABA83500E8DF67 /* LeadueDao.swift in Sources */,
 				906A7D282FB222DA00CC9913 /* FavoritesContract.swift in Sources */,
 				906A7D682FB22BEE00CC9913 /* PlayerTableViewCell.swift in Sources */,
 				906A7D2B2FB222DA00CC9913 /* FavoritesViewController.swift in Sources */,
 				907CF61D2FABA63500E8DF67 /* HomeContract.swift in Sources */,
+				9018B14B2FB31D8E00ABE300 /* ApiType.swift in Sources */,
 				906A7D2A2FB222DA00CC9913 /* FavoriteTableViewCell.swift in Sources */,
 				906A7D6A2FB22BEE00CC9913 /* Team.swift in Sources */,
 				902548C32FB2D70F00CA8601 /* NetworkManager.swift in Sources */,
 				9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */,
 				906A7D742FB235B600CC9913 /* League.swift in Sources */,
+				9018B1492FB31CE000ABE300 /* AllLeaguesEndpoint.swift in Sources */,
 				906A7D2B2FB222DA00CC9913 /* FavoritesViewController.swift in Sources */,
 				907CF61D2FABA63500E8DF67 /* HomeContract.swift in Sources */,
 				906A7D2A2FB222DA00CC9913 /* FavoriteTableViewCell.swift in Sources */,
@@ -625,6 +666,7 @@
 				907CF62B2FABA70200E8DF67 /* LocalDataSourceProtocol.swift in Sources */,
 				906A7D2D2FB222DA00CC9913 /* FavoritesPresenter.swift in Sources */,
 				90C72DB72FAC1D41002C1838 /* AppColors.swift in Sources */,
+				902548CE2FB2DCA000CA8601 /* Endpoint.swift in Sources */,
 				90C72DC62FAC2CDE002C1838 /* HomePresenter.swift in Sources */,
 				58408EBC2FAD3E52003504FE /* LeaguesPresenter.swift in Sources */,
 				58408EBE2FAD3E6E003504FE /* LeaguesProtocols.swift in Sources */,
@@ -849,13 +891,12 @@
 				version = 5.10.0;
 			};
 		};
-		902548C42FB2D8A400CA8601 /* XCRemoteSwiftPackageReference "alamofire" */ = {
+		9018B1412FB316E200ABE300 /* XCRemoteSwiftPackageReference "alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alamofire/alamofire";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 6.0.0;
-				minimumVersion = 5.0.0;
+				kind = exactVersion;
+				version = 5.8.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -871,9 +912,9 @@
 			package = 5882226F2FAD9E72000C760B /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
-		902548C52FB2D8A400CA8601 /* Alamofire */ = {
+		9018B1452FB3192700ABE300 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 902548C42FB2D8A400CA8601 /* XCRemoteSwiftPackageReference "alamofire" */;
+			package = 9018B1412FB316E200ABE300 /* XCRemoteSwiftPackageReference "alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
