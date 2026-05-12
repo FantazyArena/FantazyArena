@@ -22,6 +22,10 @@ class LeagueDetailsViewController: UIViewController {
 
     var presenter: LeagueDetailsPresenterProtocol!
 
+    var league: League?
+
+    weak var coordinator: AppCoordinator?
+    
     enum Section: Int, CaseIterable {
         case teams = 0
         case events = 1
@@ -39,13 +43,23 @@ class LeagueDetailsViewController: UIViewController {
 
 
     private func setupPresenter() {
-        let presenter = LeagueDetailsPresenter()
+
+        guard let league = league else { return }
+
+        let presenter = LeagueDetailsPresenter(
+            league: league
+        )
+
         presenter.view = self
+
         self.presenter = presenter
     }
-
+    
     private func setupNavigationBar() {
+
         title = "League Details"
+
+        view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .never
 
         favoriteBarButton = UIBarButtonItem(
@@ -76,6 +90,15 @@ class LeagueDetailsViewController: UIViewController {
 
 
     private func setupCollectionView() {
+
+        let layout = createCompositionalLayout()
+
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemBackground
+        
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
         collectionView.register(
             UINib(nibName: "TeamCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: TeamCollectionViewCell.reuseIdentifier
@@ -293,6 +316,18 @@ extension LeagueDetailsViewController: UICollectionViewDelegate {
             case .latestResults:
                 let result = presenter.getLatestResult(at: indexPath.item)
                 print("Tapped result: \(result.homeTeamName) vs \(result.awayTeamName)")
+        case .teams:
+
+            let team = presenter.getTeam(
+                at: indexPath.item
+            )
+
+            coordinator?.navigateToTeamDetails(
+                team: team
+            )
+        case .events:
+            let event = presenter.getEvent(at: indexPath.item)
+            print("Tapped event: \(event.homeTeam.name) vs \(event.awayTeam.name)")
         }
     }
 }

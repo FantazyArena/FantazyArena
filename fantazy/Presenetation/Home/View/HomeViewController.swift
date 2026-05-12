@@ -10,18 +10,21 @@ class HomeViewController: UIViewController,
     let totalSpacing: CGFloat = 24
     var presenter: HomePresenterProtocol!
     
-    override func loadView() {
-        super.loadView()
-        
-        let nib = UINib(nibName: "HomeViewController", bundle: nil)
-        let view = nib.instantiate(withOwner: self).first as! UIView
-        self.view = view
-    }
+    weak var coordinator: AppCoordinator?
+    
+
+//    override func loadView() {
+//        super.loadView()
+//
+//        let nib = UINib(nibName: "HomeViewController", bundle: nil)
+//        let view = nib.instantiate(withOwner: self).first as! UIView
+//        self.view = view
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = HomePresenter(view: self)
+//        presenter = HomePresenter(view: self)
         
         collectionView.register(UINib(nibName: "SportCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SportCollectionViewCell")
         
@@ -40,6 +43,19 @@ class HomeViewController: UIViewController,
         cell.config(with: presenter.getSport(by: indexPath.row))
         
         return cell
+    }
+    
+    // this method used to navigate
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+
+        let sport = presenter.getSport(by: indexPath.row)
+
+        coordinator?.navigateToLeagues(
+            sport: sport
+        )
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
