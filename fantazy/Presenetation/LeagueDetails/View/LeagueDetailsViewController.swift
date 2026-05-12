@@ -22,7 +22,7 @@ class LeagueDetailsViewController: UIViewController {
 
     var presenter: LeagueDetailsPresenterProtocol!
 
-    var league: League?
+    var leagueId: String?
 
     weak var coordinator: AppCoordinator?
     
@@ -44,10 +44,10 @@ class LeagueDetailsViewController: UIViewController {
 
     private func setupPresenter() {
 
-        guard let league = league else { return }
+        guard let leagueId = leagueId else { return }
 
         let presenter = LeagueDetailsPresenter(
-            league: league
+            leagueId: leagueId
         )
 
         presenter.view = self

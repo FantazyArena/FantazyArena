@@ -24,18 +24,21 @@ class SportsRepositoty: SportsRepositotyProtocol{
             let leagues = [
 
                 League(
+                    id: "id",
                     name: "Premier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier League",
                     badgeURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLFXtmUsGjZ0tqRZlxNE5jFWnI72nA108RBA&s",
                     countryName: "England"
                 ),
 
                 League(
+                    id: "id",
                     name: "Champions League",
                     badgeURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVqOch7HSvCKvpY7CeQaIjgPGa1cfT_gRhdw&s",
                     countryName: "England"
                 ),
 
                 League(
+                    id: "id",
                     name: "League Cup",
                     badgeURL:"https://www.backsportspage.com/wp-content/uploads/2022/08/2707566-55973350-2560-1440.jpg",
                     countryName: "England"

@@ -221,10 +221,10 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
               status: .upcoming)
     ]
     
-    private let league: League
+    private let leagueId: String
 
-    init(league: League) {
-        self.league = league
+    init(leagueId: String) {
+        self.leagueId = leagueId
     }
 
     private lazy var latestResults: [LatestResult] = [
@@ -270,7 +270,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         )
     ]
     
-    private let league: League = League(name: "English Premier League", badgeURL: "", countryName: "England")
+    private let league: League = League(id: "id", name: "English Premier League", badgeURL: "", countryName: "England")
     
     func viewDidLoad() {
         view?.loadLeagueDetails(league: league)
