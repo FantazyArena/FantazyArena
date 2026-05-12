@@ -48,15 +48,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = nav
 //
 //        window?.makeKeyAndVisible()
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        // Build the navigation stack in code — no storyboard needed
-        let vc = LeagueDetailsViewController()
-        let nav = UINavigationController(rootViewController: vc)
-
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//
+//        // Build the navigation stack in code — no storyboard needed
+//        let vc = LeagueDetailsViewController()
+//        let nav = UINavigationController(rootViewController: vc)
+//
+//        window = UIWindow(windowScene: windowScene)
+//        window?.rootViewController = nav
+//        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
