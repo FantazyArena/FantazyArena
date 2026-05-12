@@ -89,14 +89,14 @@ extension AppCoordinator {
 }
 extension AppCoordinator {
 
-    func navigateToLeagueDetails(league: League) {
+    func navigateToLeagueDetails(leagueId: String) {
 
         let vc = LeagueDetailsViewController(
             nibName: "LeagueDetailsViewController",
             bundle: nil
         )
 
-        vc.league = league
+        vc.leagueId = leagueId
         vc.coordinator = self
 
         navigationController.pushViewController(

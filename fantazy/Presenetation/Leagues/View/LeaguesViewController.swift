@@ -151,7 +151,7 @@ class LeaguesViewController: UIViewController ,
         let league = presenter.getLeague(at: indexPath.row)
 
         coordinator?.navigateToLeagueDetails(
-            league: league
+            leagueId: league.id ?? ""
         )
     }
     
