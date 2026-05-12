@@ -220,8 +220,60 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
               league: "Champions League",
               status: .upcoming)
     ]
+    
+    private let leagueId: String
 
+    init(leagueId: String) {
+        self.leagueId = leagueId
+    }
+
+    private lazy var latestResults: [LatestResult] = [
+        LatestResult(
+            homeTeamLogo: "teamA_logo",
+            awayTeamLogo: "teamB_logo",
+            homeTeamName: "Team A",
+            awayTeamName: "Team B",
+            result: "2 - 1",
+            date: "2024-05-10"
+        ),
+        LatestResult(
+            homeTeamLogo: "teamC_logo",
+            awayTeamLogo: "teamD_logo",
+            homeTeamName: "Team C",
+            awayTeamName: "Team D",
+            result: "0 - 0",
+            date: "2024-05-09"
+        ),
+        LatestResult(
+            homeTeamLogo: "teamE_logo",
+            awayTeamLogo: "teamF_logo",
+            homeTeamName: "Team E",
+            awayTeamName: "Team F",
+            result: "1 - 3",
+            date: "2024-05-08"
+        ),
+        LatestResult(
+            homeTeamLogo: "teamG_logo",
+            awayTeamLogo: "teamH_logo",
+            homeTeamName: "Team G",
+            awayTeamName: "Team H",
+            result: "4 - 2",
+            date: "2024-05-07"
+        ),
+        LatestResult(
+            homeTeamLogo: "teamI_logo",
+            awayTeamLogo: "teamJ_logo",
+            homeTeamName: "Team I",
+            awayTeamName: "Team J",
+            result: "1 - 1",
+            date: "2024-05-06"
+        )
+    ]
+    
+    private let league: League = League(id: "id", name: "English Premier League", badgeURL: "", countryName: "England")
+    
     func viewDidLoad() {
+        view?.loadLeagueDetails(league: league)
         view?.reloadTeams()
         view?.reloadEvents()
     }
@@ -230,6 +282,9 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
 
     func numberOfTeams() -> Int { return teams.count }
     func numberOfEvents() -> Int { return events.count }
+    func numberOfLatestResults() -> Int { return latestResults.count }
+    
     func getTeam(at index: Int) -> Team { return teams[index] }
     func getEvent(at index: Int) -> Event { return events[index] }
+    func getLatestResult(at index: Int) -> LatestResult { return latestResults[index] }
 }
