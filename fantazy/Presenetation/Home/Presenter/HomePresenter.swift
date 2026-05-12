@@ -14,7 +14,7 @@ class HomePresenter: HomePresenterProtocol {
         ]
     }
     
-    func viewDidLoad(){  }
+    func viewDidLoad() {  }
     
     func getSportsCount() -> Int{
         return sports.count
