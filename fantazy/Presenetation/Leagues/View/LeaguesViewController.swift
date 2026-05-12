@@ -17,7 +17,7 @@ class LeaguesViewController: UIViewController ,
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
-    
+    weak var coordinator: AppCoordinator?
     
     var presenter: LeaguesPresenterProtocol!
     
@@ -46,14 +46,11 @@ class LeaguesViewController: UIViewController ,
     
     private func setupTheme() {
 
-          view.backgroundColor = AppColors.background
-
           title = "Leagues"
-
+          view.backgroundColor = .systemBackground
           navigationItem.largeTitleDisplayMode = .never
 
           navigationController?.navigationBar.titleTextAttributes = [
-              .foregroundColor: AppColors.foreground,
               .font: UIFont.boldSystemFont(ofSize: 25)
           ]
 
@@ -151,7 +148,11 @@ class LeaguesViewController: UIViewController ,
         let cell = tableView.cellForRow(at: indexPath) as? LeagueTableViewCell
         cell?.animateSelection()
         
-        presenter.didSelectLeague(at: indexPath.row)
+        let league = presenter.getLeague(at: indexPath.row)
+
+        coordinator?.navigateToLeagueDetails(
+            league: league
+        )
     }
     
 }

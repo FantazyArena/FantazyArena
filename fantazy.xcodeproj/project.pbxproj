@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5805A1E92FB2888100A426BF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805A1E82FB2888100A426BF /* AppCoordinator.swift */; };
 		58091E622FB17A050059B3CC /* TeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58091E612FB17A050059B3CC /* TeamCollectionViewCell.xib */; };
 		58091E642FB17DDD0059B3CC /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58091E632FB17DDD0059B3CC /* EventCollectionViewCell.xib */; };
 		58091E662FB184A40059B3CC /* SectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58091E652FB184A40059B3CC /* SectionHeaderReusableView.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5805A1E82FB2888100A426BF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		58091E612FB17A050059B3CC /* TeamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCollectionViewCell.xib; sourceTree = "<group>"; };
 		58091E632FB17DDD0059B3CC /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		58091E652FB184A40059B3CC /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5805A1E42FB280A300A426BF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5805A1E82FB2888100A426BF /* AppCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		58408EB52FAD3CC6003504FE /* Leagues */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +397,7 @@
 		907CF6182FABA5FA00E8DF67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5805A1E42FB280A300A426BF /* Navigation */,
 				907CF61E2FABA65E00E8DF67 /* NetworkConnectivity.swift */,
 			);
 			path = Utils;
@@ -616,6 +627,7 @@
 				90C72DC62FAC2CDE002C1838 /* HomePresenter.swift in Sources */,
 				58408EBC2FAD3E52003504FE /* LeaguesPresenter.swift in Sources */,
 				58408EBE2FAD3E6E003504FE /* LeaguesProtocols.swift in Sources */,
+				5805A1E92FB2888100A426BF /* AppCoordinator.swift in Sources */,
 				906A7D6B2FB22BEE00CC9913 /* TeamDetailsViewController.swift in Sources */,
 				58408EC12FAD5A84003504FE /* LeaguesViewController.swift in Sources */,
 			);
