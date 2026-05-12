@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct LeagueEntity {
+    let id: Int
+    let name: String
+    let logo: String
+    let country: String
+    let dateAdded: Date
+}
