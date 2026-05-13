@@ -25,7 +25,13 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func didSelectSport(sport: Sport) {
-        //TODO: Pass to leagues presneter the sport, then navigate
-        view.navigateToSportDetails(sport: sport)
+
+        let isConnect = NetworkMonitor.isConnected()
+        
+        if isConnect {
+            view.navigateToSportDetails(sport: sport)
+        } else {
+            view.displayNoInternetAlert()
+        }
     }
 }

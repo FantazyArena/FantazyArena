@@ -1,6 +1,13 @@
+//
+//  NetWorkMonitor.swift
+//  fantazy
+//
+//  Created by Mo Mohamed on 12/05/2026.
+//
+
 import SystemConfiguration
 
-class NetworkConnectivity{
+class NetworkMonitor{
     
     private init() { }
     
