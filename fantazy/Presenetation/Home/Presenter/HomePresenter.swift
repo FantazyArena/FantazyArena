@@ -7,10 +7,10 @@ class HomePresenter: HomePresenterProtocol {
         self.view = view
         
         sports = [
-            Sport(name: "Football", thumbnail: "football"),
-            Sport(name: "Basketball", thumbnail: "basketball"),
-            Sport(name: "Cricket", thumbnail: "cricket"),
-            Sport(name: "Tennis", thumbnail: "tennis"),
+            Sport(name: "Football",type: .football, thumbnail: "football"),
+            Sport(name: "Basketball",type: .basketball, thumbnail: "basketball"),
+            Sport(name: "Cricket",type: .football, thumbnail: "cricket"),
+            Sport(name: "Tennis",type: .football, thumbnail: "tennis"),
         ]
     }
     
@@ -28,10 +28,15 @@ class HomePresenter: HomePresenterProtocol {
 
         let isConnect = NetworkMonitor.isConnected()
         
-        if isConnect {
-            view.navigateToSportDetails(sport: sport)
-        } else {
-            view.displayNoInternetAlert()
+        if sport.name != "Football" && sport.name != "Basketball"{
+            view.displayCommingSoonAlert()
+        }else{
+            if isConnect  {
+                view.navigateToSportDetails(sport: sport)
+            } else {
+                view.displayNoInternetAlert()
+            }
         }
+        
     }
 }

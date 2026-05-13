@@ -12,6 +12,8 @@ class LeaguesViewController: UIViewController ,
                              UITableViewDataSource,
                              LeaguesViewProtocol {
 
+    
+
     @IBOutlet weak var sportName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -69,7 +71,9 @@ class LeaguesViewController: UIViewController ,
           loadingIndicator.color = AppColors.primary
       }
     
-
+    func loadSportLeagues() {
+        tableView.reloadData()
+    }
     private func hideAllStates() {
 
         loadingIndicator.isHidden = true
