@@ -64,10 +64,15 @@ class HomeViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sport = presenter.getSport(by: indexPath.row)
         
-        coordinator?.navigateToLeagues(sport: sport)
-        
+        presenter.didSelectSport(sport: sport)
     }
     func navigateToSportDetails(sport: Sport){
-        //TODO: navigate to sport details
+        
+        coordinator?.navigateToLeagues(sport: sport)
+    }
+    
+    func displayNoInternetAlert() {
+        
+        showNoInternetAlert()
     }
 }

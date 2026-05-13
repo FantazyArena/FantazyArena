@@ -7,4 +7,5 @@ protocol HomePresenterProtocol {
 
 protocol HomeViewProtocol {
     func navigateToSportDetails(sport: Sport)
+    func displayNoInternetAlert()
 }
