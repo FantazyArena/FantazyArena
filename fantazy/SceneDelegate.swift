@@ -18,8 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
-        coordinator.configure(window: window!)
-        coordinator.start()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+            
+        let window = UIWindow(windowScene: windowScene)
+        
+        AppCoordinator.shared.configure(window: window)
+        AppCoordinator.shared.startSplash()
+        
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

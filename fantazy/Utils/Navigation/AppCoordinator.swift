@@ -111,3 +111,17 @@ extension AppCoordinator {
         )
     }
 }
+
+
+extension AppCoordinator {
+    
+    func startSplash() {
+        let splash = SplashViewController()
+        window?.rootViewController = splash
+        window?.makeKeyAndVisible()
+    }
+    
+    func showHome() {
+        start()
+    }
+}
