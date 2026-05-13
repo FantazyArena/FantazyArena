@@ -144,7 +144,7 @@
 		58969DFC2FB2B24F0089FB20 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		58969E022FB2B5020089FB20 /* LeagueDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDAO.swift; sourceTree = "<group>"; };
 		58969E042FB2B59C0089FB20 /* LeagueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeagueEntity.swift; path = fantazy/Data/Database/LeagueEntity.swift; sourceTree = SOURCE_ROOT; };
-		58C817682FB5235600D53899 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
+		58C8176A2FB53A9700D53899 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
 		9001DDB62FB4F3FE008D28E3 /* basketball.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = basketball.json; sourceTree = "<group>"; };
 		9001DDB72FB4F3FE008D28E3 /* football.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = football.json; sourceTree = "<group>"; };
 		9001DDB82FB4F3FE008D28E3 /* sports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sports.json; sourceTree = "<group>"; };
@@ -770,7 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				9018B1422FB3181B00ABE300 /* APIConfig.swift */,
-				58C817682FB5235600D53899 /* ApiKeys.xcconfig */,
+				58C8176A2FB53A9700D53899 /* ApiKeys.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1123,7 +1123,7 @@
 		};
 		9047A0D52FAA7FC5005DDA89 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58C817682FB5235600D53899 /* ApiKeys.xcconfig */;
+			baseConfigurationReference = 58C8176A2FB53A9700D53899 /* ApiKeys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1151,7 +1151,7 @@
 		};
 		9047A0D62FAA7FC5005DDA89 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58C817682FB5235600D53899 /* ApiKeys.xcconfig */;
+			baseConfigurationReference = 58C8176A2FB53A9700D53899 /* ApiKeys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
