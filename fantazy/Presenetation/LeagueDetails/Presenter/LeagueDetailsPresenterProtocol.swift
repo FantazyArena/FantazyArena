@@ -11,6 +11,7 @@ protocol LeagueDetailsViewProtocol: AnyObject {
     func reloadTeams()
     func reloadEvents()
     func updateFavoriteState(isFavorite: Bool)
+    func loadLeagueDetails(league: League)
 }
 
 protocol LeagueDetailsPresenterProtocol: AnyObject {
@@ -19,6 +20,8 @@ protocol LeagueDetailsPresenterProtocol: AnyObject {
     func toggleFavorite()
     func numberOfTeams() -> Int
     func numberOfEvents() -> Int
+    func numberOfLatestResults() -> Int
     func getTeam(at index: Int) -> Team
     func getEvent(at index: Int) -> Event
+    func getLatestResult(at index: Int) -> LatestResult
 }

@@ -17,6 +17,8 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
     @IBOutlet var teamName: UILabel!
     @IBOutlet var teamImage: UIImageView!
     
+    var team: Team?
+    
     override func loadView() {
         super.loadView()
         

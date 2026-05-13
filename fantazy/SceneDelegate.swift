@@ -9,54 +9,16 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
+        var window: UIWindow?
+        var coordinator: AppCoordinator?
 
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//        window = UIWindow(windowScene: windowScene)
-
-//        let vc = LeaguesViewController(
-//            nibName: "LeaguesViewController",
-//            bundle: nil
-//        )
-//
-//
-//        // MOCK DATA FOR TESTING
-//
-//        let sport = Sport(
-//            name: "Soccer",
-//            thumbnail: "football"
-//        )
-//
-//
-//        let repository = SportsRepositoty.shared
-//
-//        vc.presenter = LeaguesPresenter(
-//            view: vc,
-//            repository: repository,
-//            sport: sport
-//        )
-//
-//
-//        // Navigation Controller
-//
-//        let nav = UINavigationController(rootViewController: vc)
-//
-//        window?.rootViewController = nav
-//
-//        window?.makeKeyAndVisible()
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        // Build the navigation stack in code — no storyboard needed
-        let vc = LeagueDetailsViewController()
-        let nav = UINavigationController(rootViewController: vc)
-
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
+       
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
