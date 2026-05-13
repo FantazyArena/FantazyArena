@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -54,7 +54,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Card"/>
                                 <constraints>
                                     <constraint firstItem="b37-2c-pKL" firstAttribute="top" secondItem="UId-cy-Sku" secondAttribute="top" constant="12" id="0Vu-Ub-n83"/>
                                     <constraint firstAttribute="trailing" secondItem="tbq-1D-ITg" secondAttribute="trailing" constant="12" id="4TF-R4-qsA"/>
@@ -68,7 +68,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Card"/>
                         <constraints>
                             <constraint firstItem="hZf-en-LUk" firstAttribute="centerY" secondItem="DAm-v0-K5c" secondAttribute="centerY" id="8Hz-iC-9kL"/>
                             <constraint firstAttribute="bottom" secondItem="UId-cy-Sku" secondAttribute="bottom" constant="15.5" id="Cb7-4x-k6A"/>
@@ -82,6 +82,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="Background"/>
                 <constraints>
                     <constraint firstItem="DAm-v0-K5c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PV7-nh-Rfv"/>
                     <constraint firstItem="DAm-v0-K5c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="b0S-pw-ejK"/>
@@ -90,18 +91,23 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="Background"/>
             <connections>
                 <outlet property="playerImage" destination="hZf-en-LUk" id="d4b-bI-dFS"/>
                 <outlet property="playerName" destination="b37-2c-pKL" id="dBW-92-PbO"/>
                 <outlet property="playerNumber" destination="tbq-1D-ITg" id="aTh-Jf-NbY"/>
                 <outlet property="playerPosition" destination="uxk-0b-8uy" id="aOl-rZ-60c"/>
+                <outlet property="view" destination="DAm-v0-K5c" id="plx-WM-eNE"/>
             </connections>
             <point key="canvasLocation" x="165.94202898550725" y="124.21875"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Background">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Card">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

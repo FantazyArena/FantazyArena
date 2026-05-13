@@ -151,7 +151,10 @@ extension AppCoordinator {
             bundle: nil
         )
 
-        vc.team = team
+        vc.players = team.players
+        vc.coach = team.coach
+        vc.teamName = team.name
+        vc.sportType = .football
 
         homeNavigationController.pushViewController(
             vc,

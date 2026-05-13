@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<dict>
+		<key>twitter</key>
+		<string>Fantazy needs to open twitter to see teams channels.</string>
+		<key>fb</key>
+		<string>Fantazy needs to open facebook to see teams pages.</string>
+		<key>youtube</key>
+		<string>Fantazy needs to open youtube to see teams channels.</string>
+	</dict>
 	<key>TEAM_API_KEY</key>
 	<string>${TEAM_API_KEY}</string>
 	<key>SPORTS_API_KEY</key>

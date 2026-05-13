@@ -94,6 +94,8 @@
 		90DBBAE22FB3E42F00598E5C /* SportsEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DBBAE12FB3E42F00598E5C /* SportsEndpoints.swift */; };
 		90DBBAE42FB3E8FC00598E5C /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DBBAE32FB3E8FC00598E5C /* TeamDetails.swift */; };
 		90DBBAE62FB3EF9700598E5C /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DBBAE52FB3EF9700598E5C /* DateHelper.swift */; };
+		90E9E6082FB4A787005E86E7 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9E6072FB4A787005E86E7 /* RoundedCorner.swift */; };
+		90E9E60A2FB4B2C5005E86E7 /* SocialOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9E6092FB4B2C5005E86E7 /* SocialOption.swift */; };
 		90F4A0012FAE35340065A241 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A0002FAE35340065A241 /* RemoteDataSourceProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +127,6 @@
 		58969E042FB2B59C0089FB20 /* LeagueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeagueEntity.swift; path = fantazy/Data/Database/LeagueEntity.swift; sourceTree = SOURCE_ROOT; };
 		9018B1422FB3181B00ABE300 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		9018B14A2FB31D8E00ABE300 /* ApiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiType.swift; sourceTree = "<group>"; };
-		9018B14D2FB3215400ABE300 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = ApiKeys.xcconfig; path = ../ApiKeys.xcconfig; sourceTree = "<group>"; };
 		9025489C2FB2945F00CA8601 /* LatestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestResult.swift; sourceTree = "<group>"; };
 		9025489E2FB2972700CA8601 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		9025489F2FB2972700CA8601 /* ResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -185,6 +186,9 @@
 		90DBBAE12FB3E42F00598E5C /* SportsEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsEndpoints.swift; sourceTree = "<group>"; };
 		90DBBAE32FB3E8FC00598E5C /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		90DBBAE52FB3EF9700598E5C /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		90E9E6052FB48DBF005E86E7 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
+		90E9E6072FB4A787005E86E7 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		90E9E6092FB4B2C5005E86E7 /* SocialOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialOption.swift; sourceTree = "<group>"; };
 		90F4A0002FAE35340065A241 /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -434,6 +438,7 @@
 				906A7D722FB235B600CC9913 /* League.swift */,
 				90DBBAE32FB3E8FC00598E5C /* TeamDetails.swift */,
 				9025489C2FB2945F00CA8601 /* LatestResult.swift */,
+				90E9E6092FB4B2C5005E86E7 /* SocialOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 		907CF6182FABA5FA00E8DF67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				90E9E6062FB4A77B005E86E7 /* UI */,
 				5805A1E42FB280A300A426BF /* Navigation */,
 				90DBBAE52FB3EF9700598E5C /* DateHelper.swift */,
 				584F7AC22FB44B5E0036AD28 /* Alerts.swift */,
@@ -698,6 +704,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		90E9E6062FB4A77B005E86E7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				90E9E6072FB4A787005E86E7 /* RoundedCorner.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -835,6 +849,7 @@
 				906A7D6A2FB22BEE00CC9913 /* Team.swift in Sources */,
 				902548C32FB2D70F00CA8601 /* NetworkManager.swift in Sources */,
 				90DBBADE2FB3E3A500598E5C /* SportService.swift in Sources */,
+				90E9E6082FB4A787005E86E7 /* RoundedCorner.swift in Sources */,
 				906A7D742FB235B600CC9913 /* League.swift in Sources */,
 				58969E052FB2B59C0089FB20 /* LeagueEntity.swift in Sources */,
 				58969E032FB2B5020089FB20 /* LeagueDAO.swift in Sources */,
@@ -843,6 +858,7 @@
 				90F4A0012FAE35340065A241 /* RemoteDataSourceProtocol.swift in Sources */,
 				906A7D732FB235B600CC9913 /* Sport.swift in Sources */,
 				58969DFB2FB2B1510089FB20 /* FantazyDB.xcdatamodeld in Sources */,
+				90E9E60A2FB4B2C5005E86E7 /* SocialOption.swift in Sources */,
 				907CF62B2FABA70200E8DF67 /* LocalDataSourceProtocol.swift in Sources */,
 				906A7D2D2FB222DA00CC9913 /* FavoritesPresenter.swift in Sources */,
 				90C72DB72FAC1D41002C1838 /* AppColors.swift in Sources */,
@@ -878,6 +894,7 @@
 /* Begin XCBuildConfiguration section */
 		9047A0D22FAA7FC5005DDA89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90E9E6052FB48DBF005E86E7 /* ApiKeys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -939,6 +956,7 @@
 		};
 		9047A0D32FAA7FC5005DDA89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90E9E6052FB48DBF005E86E7 /* ApiKeys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
