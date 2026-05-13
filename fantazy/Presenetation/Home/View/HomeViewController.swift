@@ -9,6 +9,8 @@ class HomeViewController: UIViewController,
     
     let totalSpacing: CGFloat = 24
     var presenter: HomePresenterProtocol!
+    var coordinator : AppCoordinator?
+    
     
     override func loadView() {
         super.loadView()
@@ -59,6 +61,12 @@ class HomeViewController: UIViewController,
         return CGSize(width: width, height: width)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sport = presenter.getSport(by: indexPath.row)
+        
+        coordinator?.navigateToLeagues(sport: sport)
+        
+    }
     func navigateToSportDetails(sport: Sport){
         //TODO: navigate to sport details
     }

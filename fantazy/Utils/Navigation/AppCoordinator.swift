@@ -9,41 +9,99 @@ import UIKit
 
 final class AppCoordinator {
 
-    private let window: UIWindow
-    private let navigationController = UINavigationController()
+    static let shared = AppCoordinator()
 
-    init(window: UIWindow) {
+    private init() {}
+
+
+    private var window: UIWindow?
+
+    private let tabBarController = UITabBarController()
+
+    private let homeNavigationController = UINavigationController()
+    private let favoritesNavigationController = UINavigationController()
+    private let settingsNavigationController = UINavigationController()
+
+
+    func configure(window: UIWindow) {
         self.window = window
     }
 
-    
+
     func start() {
 
-        let vc = LeaguesViewController(
-            nibName: "LeaguesViewController",
-            bundle: nil
-        )
-        vc.coordinator = self
-        let sport = Sport(
-            name: "Soccer",
-            thumbnail: "football"
-        )
+        setupHomeTab()
+        setupFavoritesTab()
+        setupSettingsTab()
 
-        let repository = SportsRepository.shared
+        tabBarController.viewControllers = [
+            homeNavigationController,
+            favoritesNavigationController,
+            settingsNavigationController
+        ]
 
-        vc.presenter = LeaguesPresenter(
-            view: vc,
-            repository: repository,
-            sport: sport
-        )
+        tabBarController.selectedIndex = 0
 
-        navigationController.viewControllers = [vc]
-
-        window.rootViewController = navigationController
-
-        window.makeKeyAndVisible()
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
 }
+
+
+private extension AppCoordinator {
+
+    func setupHomeTab() {
+
+        let vc = HomeViewController(
+            nibName: "HomeViewController",
+            bundle: nil
+        )
+
+        vc.coordinator = self
+        vc.presenter = HomePresenter(view: vc)
+
+        homeNavigationController.viewControllers = [vc]
+
+        homeNavigationController.tabBarItem = UITabBarItem(
+            title: "Home",
+            image: UIImage(systemName: "house"),
+            selectedImage: UIImage(systemName: "house.fill")
+        )
+    }
+
+    func setupFavoritesTab() {
+
+        let vc = FavoritesViewController(
+            nibName: "FavoritesViewController",
+            bundle: nil
+        )
+
+        favoritesNavigationController.viewControllers = [vc]
+
+        favoritesNavigationController.tabBarItem = UITabBarItem(
+            title: "Favorites",
+            image: UIImage(systemName: "heart"),
+            selectedImage: UIImage(systemName: "heart.fill")
+        )
+    }
+
+    func setupSettingsTab() {
+
+        let vc = SettingsViewController(
+            nibName: "SettingsViewController",
+            bundle: nil
+        )
+
+        settingsNavigationController.viewControllers = [vc]
+
+        settingsNavigationController.tabBarItem = UITabBarItem(
+            title: "Settings",
+            image: UIImage(systemName: "gearshape"),
+            selectedImage: UIImage(systemName: "gearshape.fill")
+        )
+    }
+}
+
 
 extension AppCoordinator {
 
@@ -64,13 +122,11 @@ extension AppCoordinator {
 
         vc.coordinator = self
 
-        navigationController.pushViewController(
+        homeNavigationController.pushViewController(
             vc,
             animated: true
         )
     }
-}
-extension AppCoordinator {
 
     func navigateToLeagueDetails(leagueId: String) {
 
@@ -82,13 +138,11 @@ extension AppCoordinator {
         vc.leagueId = leagueId
         vc.coordinator = self
 
-        navigationController.pushViewController(
+        homeNavigationController.pushViewController(
             vc,
             animated: true
         )
     }
-}
-extension AppCoordinator {
 
     func navigateToTeamDetails(team: Team) {
 
@@ -99,7 +153,7 @@ extension AppCoordinator {
 
         vc.team = team
 
-        navigationController.pushViewController(
+        homeNavigationController.pushViewController(
             vc,
             animated: true
         )
