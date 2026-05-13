@@ -56,9 +56,7 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-
         title = "League Details"
-
         view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .never
 
@@ -70,8 +68,10 @@ class LeagueDetailsViewController: UIViewController {
         )
         favoriteBarButton.tintColor = .systemRed
         navigationItem.rightBarButtonItem = favoriteBarButton
-    }
 
+        updateFavoriteState(isFavorite: presenter.isFavorite())
+    }
+    
     @objc private func favoriteTapped() {
         presenter.toggleFavorite()
     }

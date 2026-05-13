@@ -21,31 +21,51 @@ class LeagueDAO {
       return []
     }
     
-    func addFavorite(id: Int, name: String, logo: String, country: String) {
-        //Todo
-    }
-    
     func removeFavorite(id: Int) {
         //Todo
     }
     
     func toggleFavorite(id: Int, name: String, logo: String, country: String) {
-        //Todo
+        if(isFavorite(id: id)){
+            removeFavorite(id: id)
+        }else{
+            addFavorite(id: id, name: name, logo: logo, country: country)
+        }
     }
     
-    func isFavorite(id: Int) -> Bool {
+    func addFavorite(id: Int, name: String, logo: String, country: String) {
+        guard !isFavorite(id: id) else { return } // prevent duplicates
+        
+        let favorite = FavoriteLeague(context: context)
+        favorite.id = Int32(id)
+        favorite.name = name
+        favorite.logo = logo
+        favorite.country = country
+        
+        saveContext()
+    }
 
-        //Todo
-        return false
+    func isFavorite(id: Int) -> Bool {
+        let request: NSFetchRequest<FavoriteLeague> = FavoriteLeague.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %d", id)
+        request.fetchLimit = 1
+        
+        do {
+            let count = try context.count(for: request)
+            return count > 0
+        } catch {
+            print("Failed to check favorite: \(error)")
+            return false
+        }
     }
     
     private func saveContext() {
         guard context.hasChanges else { return }
-            do {
-                try context.save()
-            } catch {
-                print("Failed to save context: \(error)")
-            }
+        do {
+            try context.save()
+        } catch {
+            print("Failed to save context: \(error)")
+        }
     }
     
 }

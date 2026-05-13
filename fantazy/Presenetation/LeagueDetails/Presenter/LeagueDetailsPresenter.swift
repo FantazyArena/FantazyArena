@@ -132,7 +132,19 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         view?.reloadEvents()
     }
 
-    func toggleFavorite() {}
+    func isFavorite() -> Bool {
+        return SportsRepository.shared.isLeagueFavorite(id: leagueId)
+    }
+    
+    func toggleFavorite() {
+        if(SportsRepository.shared.isLeagueFavorite(id: leagueId)){
+            //TODO: remove favorite
+            view?.updateFavoriteState(isFavorite: false)
+        }else{
+            SportsRepository.shared.addLeagueToFavorite(league: league)
+            view?.updateFavoriteState(isFavorite: true)
+        }
+    }
 
     func numberOfTeams() -> Int { return teams.count }
     func numberOfEvents() -> Int { return events.count }
