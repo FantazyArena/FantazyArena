@@ -8,7 +8,9 @@
 class LeaguesPresenter : LeaguesPresenterProtocol {
     
     weak var view: LeaguesViewProtocol?
-    private var leagues :[League] = []
+    private var leagues :[League] = [
+        League(id: "id", name: "Gold", badgeURL: "", countryName: "Egypt")
+    ]
 
     private let repository : SportsRepositoryProtocol
     private let sport : Sport

@@ -24,7 +24,12 @@ final class SportsRepository: SportsRepositoryProtocol {
     }
     
     func getTeamDetails(for sport: SportType, teamName: String) async throws -> TeamDetails {
-        return TeamDetails(thumbnail: "", name: "", founded: "", stadium: "", national: "", players: [])
+        do{
+            return try await remoteDataSource.fetchTeamDetails(sport: sport, teamName: teamName)
+        }catch{
+            print("Sport Repository: Error \(error.localizedDescription)")
+            return TeamDetails(thumbnail: "", name: "", founded: "", national: "", players: [])
+        }
     }
     
     func addLeagueToFavorite(league: League){

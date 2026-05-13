@@ -1,11 +1,10 @@
 protocol TeamDetailsPresenterProtocol {
-    func loadData()
-    func playersCount() -> Int
-    func getPlayer(with index: Int) -> Player
-    func onSocialClicked(with social: String)
+    func loadData(teamName: String, sportType: SportType)
+    func onSocialClicked(with social: SocialOption)
 }
 
-protocol TeamDetailsViewProtocol {
-    func loadPlayers(players: [Player])
+protocol TeamDetailsViewProtocol: AnyObject {
     func loadTeam(team: TeamDetails)
+    func setLoading(with loading: Bool)
+    func showError(_ message: String)
 }

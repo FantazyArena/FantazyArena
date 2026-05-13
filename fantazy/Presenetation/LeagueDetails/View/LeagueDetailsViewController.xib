@@ -63,7 +63,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qcp-yv-Wtd">
-                    <rect key="frame" x="12" y="186" width="390" height="676"/>
+                    <rect key="frame" x="0.0" y="186" width="414" height="676"/>
                     <color key="backgroundColor" name="Background"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lqz-oR-az6">
                         <size key="itemSize" width="128" height="128"/>
@@ -79,9 +79,9 @@
                 <constraint firstItem="qcp-yv-Wtd" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ChH-1R-L0z"/>
                 <constraint firstItem="qcp-yv-Wtd" firstAttribute="top" secondItem="G8i-4E-jjb" secondAttribute="bottom" constant="32" id="LD0-ku-Xj4"/>
                 <constraint firstItem="G8i-4E-jjb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OSr-Yp-Jdd"/>
-                <constraint firstItem="qcp-yv-Wtd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="SCl-5A-8Eu"/>
+                <constraint firstItem="qcp-yv-Wtd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SCl-5A-8Eu"/>
                 <constraint firstItem="G8i-4E-jjb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Z3Z-kf-ef1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qcp-yv-Wtd" secondAttribute="trailing" constant="12" id="hCY-Wx-OY2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qcp-yv-Wtd" secondAttribute="trailing" id="hCY-Wx-OY2"/>
                 <constraint firstItem="G8i-4E-jjb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yAL-Uu-Zeu"/>
                 <constraint firstItem="G8i-4E-jjb" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="110" id="yBe-Pt-e3y"/>
             </constraints>

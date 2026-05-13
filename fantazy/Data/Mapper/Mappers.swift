@@ -15,7 +15,9 @@ struct FootballMapper {
     static func toTeam(_ dto: FootballTeamDTO) -> Team {
         return Team(
             thumbnail: dto.teamLogo ?? "",
-            name: dto.teamName
+            name: dto.teamName,
+            coach: dto.coaches?[0].coachName ?? "",
+            players: dto.players?.map(FootballMapper.toPlayer) ?? []
         )
     }
 
@@ -31,11 +33,15 @@ struct FootballMapper {
     static func toEvent(_ dto: FootballEventDTO) -> Event {
         let homeTeam = Team(
             thumbnail: dto.homeTeamLogo ?? "",
-            name: dto.eventHomeTeam ?? ""
+            name: dto.eventHomeTeam ?? "",
+            coach: "",
+            players: []
         )
         let awayTeam = Team(
             thumbnail: dto.awayTeamLogo ?? "",
-            name: dto.eventAwayTeam ?? ""
+            name: dto.eventAwayTeam ?? "",
+            coach: "",
+            players: []
         )
         return Event(
             id: String(dto.eventKey),
@@ -70,18 +76,24 @@ struct BasketballMapper {
     static func toTeam(_ dto: BasketballTeamDTO) -> Team {
         Team(
             thumbnail: dto.teamLogo ?? "",
-            name: dto.teamName
+            name: dto.teamName,
+            coach: "",
+            players: []
         )
     }
 
     static func toEvent(_ dto: BasketballEventDTO) -> Event {
         let homeTeam = Team(
             thumbnail: dto.eventHomeTeamLogo ?? "",
-            name: dto.eventHomeTeam ?? ""
+            name: dto.eventHomeTeam ?? "",
+            coach: "",
+            players: []
         )
         let awayTeam = Team(
             thumbnail: dto.eventAwayTeamLogo ?? "",
-            name: dto.eventAwayTeam ?? ""
+            name: dto.eventAwayTeam ?? "",
+            coach: "",
+            players: []
         )
         return Event(
             id: String(dto.eventKey),
@@ -99,5 +111,29 @@ struct BasketballMapper {
         if live == "1" { return .live }
         if let s = status, !s.isEmpty, s != "0" { return .finished }
         return .upcoming
+    }
+}
+
+struct FootballTeamDetailsMapper{
+    static func toTeam(_ dto: FootballTeamDetailsDTO) -> TeamDetails {
+        TeamDetails(
+            thumbnail: dto.team.logo ?? "",
+            name: dto.team.name,
+            founded: String(dto.team.founded ?? 0),
+            national: dto.team.country ?? "",
+            players: []
+        )
+    }
+}
+
+struct BasketballTeamDetailsMapper{
+    static func toTeam(_ dto: BasketballTeamDetailsDTO) -> TeamDetails {
+        TeamDetails(
+            thumbnail: dto.logo ?? "",
+            name: dto.name,
+            founded: "2020",
+            national: dto.country?.name ?? "",
+            players: []
+        )
     }
 }
