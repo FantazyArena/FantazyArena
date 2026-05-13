@@ -12,6 +12,7 @@ protocol LeaguesPresenterProtocol {
     func getSportName()-> String
     func getLeaguesCount()-> Int
     func getLeague(at index:Int)-> League
+    func loadData(sport:Sport)
     
     func didSelectLeague(at index:Int)
 }
@@ -20,6 +21,7 @@ protocol LeaguesViewProtocol: AnyObject {
     
     func reloadData()
     
+    func loadSportLeagues()
     func showLoading()
     func hideLoading()
     

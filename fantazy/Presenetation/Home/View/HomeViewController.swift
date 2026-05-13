@@ -66,6 +66,7 @@ class HomeViewController: UIViewController,
         
         presenter.didSelectSport(sport: sport)
     }
+    
     func navigateToSportDetails(sport: Sport){
         
         coordinator?.navigateToLeagues(sport: sport)
@@ -74,5 +75,9 @@ class HomeViewController: UIViewController,
     func displayNoInternetAlert() {
         
         showNoInternetAlert()
+    }
+    
+    func displayCommingSoonAlert(){
+        showCommingSoonAlert()
     }
 }

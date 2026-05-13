@@ -17,12 +17,30 @@ class LeagueDAO {
     
     func fetchFavorites() -> [FavoriteLeague] {
         
-        //Todo
-      return []
+        let request: NSFetchRequest<FavoriteLeague> = FavoriteLeague.fetchRequest()
+               
+               do {
+                   return try context.fetch(request)
+               } catch {
+                   print("Failed to fetch favorites: \(error)")
+                   return []
+               }
     }
     
     func removeFavorite(id: Int) {
-        //Todo
+        let request: NSFetchRequest<FavoriteLeague> = FavoriteLeague.fetchRequest()
+               request.predicate = NSPredicate(format: "id == %d", id)
+               
+               do {
+                   let results = try context.fetch(request)
+                   
+                   for object in results {
+                       context.delete(object)
+                   }
+                   saveContext()
+               } catch {
+                   print("Failed to remove favorite: \(error)")
+               }
     }
     
     func toggleFavorite(id: Int, name: String, logo: String, country: String) {

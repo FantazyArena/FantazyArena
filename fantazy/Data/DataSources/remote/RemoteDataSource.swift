@@ -1,14 +1,39 @@
 class RemoteDataSource: RemoteDataSourceProtocol {
     
     private let teamDetailsService: TeamDetailsAPIServiceProtocol
-    
-    init(teamDetailsService: TeamDetailsAPIServiceProtocol = TeamDetailsAPIService.shared) {
+    private let footballService : SportService
+    private let basketballService : SportService
+
+    init(
+         teamDetailsService: TeamDetailsAPIServiceProtocol = TeamDetailsAPIService.shared,
+         footballService :SportService = FootballAPIService.shared,
+         basketballService :SportService = BasketballAPIService.shared
+    ) {
         self.teamDetailsService = teamDetailsService
+        self.footballService = footballService
+        self.basketballService = basketballService
     }
     
     func fetchLeagues(sport: SportType) async throws -> [League] {
-        return []
-    }
+        do{
+            switch(sport){
+                case .basketball:
+                 let result = try await basketballService.getLeagues()
+                return result
+                
+              case .football:
+                let result = try await footballService.getLeagues()
+               
+                return result
+                
+                }
+            } catch{
+                print("Remote data source: Error \(error.localizedDescription)")
+                return []
+            
+            }
+        }
+    
     
     func fetchLeagueDetails(sport: SportType, leagueId: Int) async throws -> (teams: [Team], upcoming: [Event], latest: [Event]) {
         return ([], [], [])

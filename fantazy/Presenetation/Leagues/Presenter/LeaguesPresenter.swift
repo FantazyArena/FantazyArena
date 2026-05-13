@@ -8,9 +8,7 @@
 class LeaguesPresenter : LeaguesPresenterProtocol {
     
     weak var view: LeaguesViewProtocol?
-    private var leagues :[League] = [
-        League(id: "id", name: "Gold", badgeURL: "", countryName: "Egypt")
-    ]
+    private var leagues :[League] = []
 
     private let repository : SportsRepositoryProtocol
     private let sport : Sport
@@ -26,9 +24,33 @@ class LeaguesPresenter : LeaguesPresenterProtocol {
     
     func viewDidLoad(){
         view?.showLoading()
-        // TODO: fetch leagues
+        loadData(sport:sport)
     }
     
+    
+    func loadData(sport:Sport){
+        Task {
+            await MainActor.run {
+                self.view?.showLoading()
+            }
+
+            do {
+                let leagues = try await SportsRepository.shared.getLeagues(for: sport.type)
+                self.leagues = leagues
+                await MainActor.run {
+                    self.view?.hideLoading()
+                    self.view?.loadSportLeagues()
+                }
+            } catch {
+                await MainActor.run {
+                    self.view?.hideLoading()
+                    self.view?.showError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+
     func getSportName() -> String {
         return sport.name
     }

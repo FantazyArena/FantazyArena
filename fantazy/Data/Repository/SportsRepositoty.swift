@@ -16,7 +16,12 @@ final class SportsRepository: SportsRepositoryProtocol {
     }
     
     func getLeagues(for sport: SportType) async throws -> [League] {
-        return []
+        do{
+            return try await remoteDataSource.fetchLeagues(sport: sport)
+        }catch{
+            print("Sport Repository: Error \(error.localizedDescription)")
+            return []
+        }
     }
     
     func getLeagueDetails(for sport: SportType, leagueId: Int) async throws -> (teams: [Team], upcoming: [Event], latest: [Event]) {

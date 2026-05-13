@@ -21,4 +21,18 @@ extension UIViewController {
 
         present(alert, animated: true)
     }
+    
+    
+    func showCommingSoonAlert() {
+
+        let alert = UIAlertController(
+            title: "OoPs",
+            message: "This is Comming Soon Feature.",
+            preferredStyle: .alert
+        )
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+
+        present(alert, animated: true)
+    }
 }
