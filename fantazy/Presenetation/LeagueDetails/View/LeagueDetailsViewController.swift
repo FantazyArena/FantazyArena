@@ -56,9 +56,7 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-
         title = "League Details"
-
         view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .never
 
@@ -70,8 +68,10 @@ class LeagueDetailsViewController: UIViewController {
         )
         favoriteBarButton.tintColor = .systemRed
         navigationItem.rightBarButtonItem = favoriteBarButton
-    }
 
+        updateFavoriteState(isFavorite: presenter.isFavorite())
+    }
+    
     @objc private func favoriteTapped() {
         presenter.toggleFavorite()
     }
@@ -307,9 +307,6 @@ extension LeagueDetailsViewController: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath) {
         guard let section = Section(rawValue: indexPath.section) else { return }
         switch section {
-            case .teams:
-                let team = presenter.getTeam(at: indexPath.item)
-                print("Tapped team: \(team.name)")
             case .events:
                 let event = presenter.getEvent(at: indexPath.item)
                 print("Tapped event: \(event.homeTeam.name) vs \(event.awayTeam.name)")
@@ -325,9 +322,6 @@ extension LeagueDetailsViewController: UICollectionViewDelegate {
             coordinator?.navigateToTeamDetails(
                 team: team
             )
-        case .events:
-            let event = presenter.getEvent(at: indexPath.item)
-            print("Tapped event: \(event.homeTeam.name) vs \(event.awayTeam.name)")
         }
     }
 }
