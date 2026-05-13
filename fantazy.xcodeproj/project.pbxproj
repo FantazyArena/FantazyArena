@@ -39,7 +39,6 @@
 		58969DF32FB2B0330089FB20 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58969DF12FB2AF260089FB20 /* CoreData.framework */; };
 		58969DFB2FB2B1510089FB20 /* FantazyDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58969DF92FB2B1510089FB20 /* FantazyDB.xcdatamodeld */; };
 		58969DFD2FB2B24F0089FB20 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58969DFC2FB2B24F0089FB20 /* PersistenceController.swift */; };
-		58969DFF2FB2B27D0089FB20 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58969DFE2FB2B27D0089FB20 /* FavoritesManager.swift */; };
 		58969E032FB2B5020089FB20 /* LeagueDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58969E022FB2B5020089FB20 /* LeagueDAO.swift */; };
 		58969E052FB2B59C0089FB20 /* LeagueEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58969E042FB2B59C0089FB20 /* LeagueEntity.swift */; };
 		9001DDB92FB4F3FE008D28E3 /* basketball.json in Resources */ = {isa = PBXBuildFile; fileRef = 9001DDB62FB4F3FE008D28E3 /* basketball.json */; };
@@ -143,7 +142,6 @@
 		58969DF12FB2AF260089FB20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		58969DFA2FB2B1510089FB20 /* FantazyDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FantazyDB.xcdatamodel; sourceTree = "<group>"; };
 		58969DFC2FB2B24F0089FB20 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		58969DFE2FB2B27D0089FB20 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		58969E022FB2B5020089FB20 /* LeagueDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDAO.swift; sourceTree = "<group>"; };
 		58969E042FB2B59C0089FB20 /* LeagueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeagueEntity.swift; path = fantazy/Data/Database/LeagueEntity.swift; sourceTree = SOURCE_ROOT; };
 		58C817682FB5235600D53899 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
@@ -665,7 +663,6 @@
 				58969DF92FB2B1510089FB20 /* FantazyDB.xcdatamodeld */,
 				906A7D752FB235EA00CC9913 /* Entity */,
 				58969DFC2FB2B24F0089FB20 /* PersistenceController.swift */,
-				58969DFE2FB2B27D0089FB20 /* FavoritesManager.swift */,
 				58969E022FB2B5020089FB20 /* LeagueDAO.swift */,
 			);
 			path = Database;
@@ -962,7 +959,6 @@
 				584140B92FAFBA7C00E91D04 /* Event.swift in Sources */,
 				906A7D282FB222DA00CC9913 /* FavoritesContract.swift in Sources */,
 				906A7D682FB22BEE00CC9913 /* PlayerTableViewCell.swift in Sources */,
-				58969DFF2FB2B27D0089FB20 /* FavoritesManager.swift in Sources */,
 				90DBBA992FB3D7AB00598E5C /* SettingOption.swift in Sources */,
 				906A7D2B2FB222DA00CC9913 /* FavoritesViewController.swift in Sources */,
 				90DBBADA2FB3E12200598E5C /* BasketballAPIService.swift in Sources */,
