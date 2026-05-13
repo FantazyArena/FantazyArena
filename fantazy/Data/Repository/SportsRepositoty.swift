@@ -1,51 +1,25 @@
 import Foundation
 
-class SportsRepositoty: SportsRepositotyProtocol{
+final class SportsRepository: SportsRepositoryProtocol {
+    //TODO: add local data source
     
-    static let shared: SportsRepositotyProtocol = SportsRepositoty(local: LocalDataSource(leagueDao: LeagueDAO.shared), remote: RemoteDataSource())
-    
-    let local: LocalDataSourceProtocol
-    let remote: RemoteDataSourceProtocol
-    
-    private init(local: LocalDataSourceProtocol, remote: RemoteDataSourceProtocol){
-        self.local = local
-        self.remote = remote
+    private let remoteDataSource: RemoteDataSourceProtocol
+
+    init(
+        remoteDataSource: RemoteDataSourceProtocol = RemoteDataSource()
+    ) {
+        self.remoteDataSource = remoteDataSource
     }
     
-    func fetchLeagues(
-        sport: Sport,
-        completion: @escaping (Result<[League], Error>) -> Void
-    ) {
-
-        // simulate network delay
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-
-            let leagues = [
-
-                League(
-                    id: "id",
-                    name: "Premier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier LeaguePremier League",
-                    badgeURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLFXtmUsGjZ0tqRZlxNE5jFWnI72nA108RBA&s",
-                    countryName: "England"
-                ),
-
-                League(
-                    id: "id",
-                    name: "Champions League",
-                    badgeURL:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVqOch7HSvCKvpY7CeQaIjgPGa1cfT_gRhdw&s",
-                    countryName: "England"
-                ),
-
-                League(
-                    id: "id",
-                    name: "League Cup",
-                    badgeURL:"https://www.backsportspage.com/wp-content/uploads/2022/08/2707566-55973350-2560-1440.jpg",
-                    countryName: "England"
-                )
-            ]
-
-            completion(.success(leagues))
-        }
+    func getLeagues(for sport: SportType) async throws -> [League] {
+        return []
+    }
+    
+    func getLeagueDetails(for sport: SportType, leagueId: Int) async throws -> (teams: [Team], upcoming: [Event], latest: [Event]) {
+        return ([], [], [])
+    }
+    
+    func getTeamDetails(for sport: SportType, teamName: String) async throws -> TeamDetails {
+        return TeamDetails(thumbnail: "", name: "", founded: "", stadium: "", national: "", players: [])
     }
 }
