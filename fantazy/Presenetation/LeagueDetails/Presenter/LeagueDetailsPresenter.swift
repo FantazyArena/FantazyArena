@@ -16,74 +16,10 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         // 1. FC Barcelona
         Team(
             thumbnail: "barcelona_logo.jpg",
-            name: "FC Barcelona"
+            name: "FC Barcelona",
+            coach: "",
+            players: []
         ),
-
-        // 2. Real Madrid
-        Team(
-            thumbnail: "realmadrid_logo.jpg",
-            name: "Real Madrid"
-        ),
-
-        // 3. Manchester City
-        Team(
-            thumbnail: "man_city_logo.jpg",
-            name: "Manchester City"
-        ),
-
-        // 4. Manchester United
-        Team(
-            thumbnail: "man_united_logo.jpg",
-            name: "Manchester United"
-        ),
-
-        // 5. Liverpool
-        Team(
-            thumbnail: "liverpool_logo.jpg",
-            name: "Liverpool"
-        ),
-
-        // 6. Arsenal
-        Team(
-            thumbnail: "arsenal_logo.jpg",
-            name: "Arsenal"
-        ),
-
-        // 7. Chelsea
-        Team(
-            thumbnail: "chelsea_logo.jpg",
-            name: "Chelsea"
-        ),
-
-        // 8. Paris Saint-Germain (PSG)
-        Team(
-            thumbnail: "psg_logo.jpg",
-            name: "Paris Saint-Germain"
-        ),
-
-        // 9. Bayern Munich
-        Team(
-            thumbnail: "bayern_logo.jpg",
-            name: "Bayern Munich"
-        ),
-
-        // 10. Juventus
-        Team(
-            thumbnail: "juventus_logo.jpg",
-            name: "Juventus"
-        ),
-
-        // 11. Inter Milan
-        Team(
-            thumbnail: "inter_logo.jpg",
-            name: "Inter Milan"
-        ),
-
-        // 12. AC Milan
-        Team(
-            thumbnail: "acmilan_logo.jpg",
-            name: "AC Milan"
-        )
     ]
 
     private lazy var events: [Event] = [
