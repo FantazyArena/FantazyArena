@@ -1,11 +1,14 @@
 import Foundation
 
 final class SportsRepository: SportsRepositoryProtocol {
+    
+    static let shared = SportsRepository()
+    
     //TODO: add local data source
     
     private let remoteDataSource: RemoteDataSourceProtocol
 
-    init(
+    private init(
         remoteDataSource: RemoteDataSourceProtocol = RemoteDataSource()
     ) {
         self.remoteDataSource = remoteDataSource

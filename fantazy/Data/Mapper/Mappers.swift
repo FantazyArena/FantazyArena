@@ -5,6 +5,7 @@ struct FootballMapper {
 
     static func toLeague(_ dto: FootballLeagueDTO) -> League {
         League(
+            id: String(dto.leagueKey),
             name: dto.leagueName,
             badgeURL: dto.leagueLogo ?? "",
             countryName: dto.countryName ?? ""
@@ -59,6 +60,7 @@ struct BasketballMapper {
 
     static func toLeague(_ dto: BasketballLeagueDTO) -> League {
         League(
+            id: String(dto.leagueKey),
             name: dto.leagueName,
             badgeURL: "",
             countryName: dto.countryName ?? ""

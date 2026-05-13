@@ -29,7 +29,7 @@ final class AppCoordinator {
             thumbnail: "football"
         )
 
-        let repository = SportsRepositoty.shared
+        let repository = SportsRepository.shared
 
         vc.presenter = LeaguesPresenter(
             view: vc,
@@ -43,25 +43,8 @@ final class AppCoordinator {
 
         window.makeKeyAndVisible()
     }
-//    func start() {
-//
-//        let homeVC = HomeViewController(
-//            nibName: "HomeViewController",
-//            bundle: nil
-//        )
-//
-//        homeVC.coordinator = self
-//
-//        homeVC.presenter = HomePresenter(
-//            view: homeVC
-//        )
-//
-//        navigationController.viewControllers = [homeVC]
-//
-//        window.rootViewController = navigationController
-//        window.makeKeyAndVisible()
-//    }
 }
+
 extension AppCoordinator {
 
     func navigateToLeagues(sport: Sport) {
@@ -71,7 +54,7 @@ extension AppCoordinator {
             bundle: nil
         )
 
-        let repository = SportsRepositoty.shared
+        let repository = SportsRepository.shared
 
         vc.presenter = LeaguesPresenter(
             view: vc,
