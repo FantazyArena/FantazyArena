@@ -19,4 +19,12 @@ class LocalDataSource: LocalDataSourceProtocol {
     func isLeagueFavorite(leagueId: String) -> Bool {
         return leagueDao.isFavorite(id: Int(leagueId) ?? 0)
     }
+    
+    func removeLeagueFromFavorite(leagueId: String) {
+            leagueDao.removeFavorite(id: Int(leagueId) ?? 0)
+        }
+
+        func getAllFavorites() -> [FavoriteLeague] {
+            return leagueDao.fetchFavorites()
+        }
 }

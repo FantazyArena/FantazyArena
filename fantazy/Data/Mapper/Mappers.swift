@@ -11,6 +11,30 @@ struct FootballMapper {
             countryName: dto.countryName ?? ""
         )
     }
+    
+    static func toLatestResult(_ dto: FootballEventDTO) -> LatestResult {
+            let homeTeam = Team(
+                thumbnail: dto.homeTeamLogo ?? "",
+                name: dto.eventHomeTeam ?? "",
+                coach: "",
+                players: []
+            )
+            let awayTeam = Team(
+                thumbnail: dto.awayTeamLogo ?? "",
+                name: dto.eventAwayTeam ?? "",
+                coach: "",
+                players: []
+            )
+            
+            return LatestResult(
+                homeTeamLogo: homeTeam.thumbnail ?? "",
+                awayTeamLogo: awayTeam.thumbnail ?? "",
+                homeTeamName: homeTeam.name,
+                awayTeamName: awayTeam.name,
+                result: dto.eventFinalResult ?? "0 - 0",
+                date: dto.eventDate ?? ""
+            )
+        }
 
     static func toTeam(_ dto: FootballTeamDTO) -> Team {
         return Team(
@@ -72,6 +96,30 @@ struct BasketballMapper {
             countryName: dto.countryName ?? ""
         )
     }
+    
+    static func toLatestResult(_ dto: BasketballEventDTO) -> LatestResult {
+            let homeTeam = Team(
+                thumbnail: dto.eventHomeTeamLogo ?? "",
+                name: dto.eventHomeTeam ?? "",
+                coach: "",
+                players: []
+            )
+            let awayTeam = Team(
+                thumbnail: dto.eventAwayTeamLogo ?? "",
+                name: dto.eventAwayTeam ?? "",
+                coach: "",
+                players: []
+            )
+
+            return LatestResult(
+                homeTeamLogo: homeTeam.thumbnail ?? "",
+                awayTeamLogo: awayTeam.thumbnail ?? "",
+                homeTeamName: homeTeam.name,
+                awayTeamName: awayTeam.name,
+                result: dto.eventFinalResult ?? "0 - 0",
+                date: dto.eventDate ?? ""
+            )
+        }
 
     static func toTeam(_ dto: BasketballTeamDTO) -> Team {
         Team(

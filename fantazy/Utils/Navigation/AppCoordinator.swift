@@ -83,14 +83,26 @@ extension AppCoordinator {
         let vc = LeaguesViewController(nibName: "LeaguesViewController", bundle: nil)
         vc.presenter = LeaguesPresenter(view: vc, repository: SportsRepository.shared, sport: sport)
         vc.coordinator = self
+        vc.sport = sport
         homeNavigationController.pushViewController(vc, animated: true)
     }
 
-    func navigateToLeagueDetails(leagueId: String) {
+    func navigateToLeagueDetails(leagueId: String, sportType: SportType, league: League) {
         let vc = LeagueDetailsViewController(nibName: "LeagueDetailsViewController", bundle: nil)
         vc.leagueId = leagueId
+        vc.sportType = sportType
+        vc.currentLeague = league
+        vc.presenter = LeagueDetailsPresenter(leagueId: leagueId, sportType: sportType, currentLeague: league)
         vc.coordinator = self
-        homeNavigationController.pushViewController(vc, animated: true)
+        
+        let activeNavController: UINavigationController
+        if tabBarController.selectedIndex == 1 { 
+            activeNavController = favoritesNavigationController
+        } else {
+            activeNavController = homeNavigationController
+        }
+        
+        activeNavController.pushViewController(vc, animated: true)
     }
 
     func navigateToTeamDetails(team: Team) {
@@ -103,8 +115,9 @@ extension AppCoordinator {
         vc.players = team.players
         vc.coach = team.coach
         vc.teamName = team.name
+        vc.teamImageURL = team.thumbnail
         vc.sportType = .football
-
+        
         homeNavigationController.pushViewController(
             vc,
             animated: true

@@ -3,6 +3,8 @@ import UIKit
 class FavoritesViewController: UIViewController,
                                UITableViewDelegate, UITableViewDataSource, FavoritesViewProtocol{
 
+    
+
     @IBOutlet var tableView: UITableView!
     
     var presenter: FavoritesPresenterProtocol!
@@ -18,7 +20,7 @@ class FavoritesViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = FavoritesPresenter(view: self)
-        
+        presenter.viewDidLoad()
         tableView.register(UINib(nibName: "FavoriteTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteTableViewCell")
         
         tableView.delegate = self
@@ -37,10 +39,43 @@ class FavoritesViewController: UIViewController,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
         presenter.selectLeague(by: indexPath.row)
     }
     
     func navigateToLeagueDetails(league: League){
-        //TODO: navigate to league details screen
+        print("clicked")
+        AppCoordinator.shared.navigateToLeagueDetails(leagueId: league.id!, sportType:.football, league: league)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.viewDidLoad()
+    }
+    func renderFavorites() {
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.removeRequest(at: indexPath.row)
+        }
+    }
+    
+    func showDeleteConfirmation(for leagueName: String, completion: @escaping (Bool) -> Void) {
+        let alert = UIAlertController(
+                title: "Remove Favorite",
+                message: "Do you want to remove \(leagueName) from favorites?",
+                preferredStyle: .alert
+            )
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                completion(false)
+            })
+            
+            alert.addAction(UIAlertAction(title: "Remove", style: .destructive) { _ in
+                completion(true)
+            })
+            
+            present(alert, animated: true)
     }
 }

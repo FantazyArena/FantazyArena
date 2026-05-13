@@ -24,11 +24,14 @@ class FavoriteTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func config(with league: League){
-        //TODO: get image using sdkWebImage
-        leagueImage.image = UIImage(named: "Football") // Testing
+    func config(with league: FavoriteLeague){
+        
+        self.leagueImage.sd_setImage(
+            with: URL(string: league.logo ?? ""),
+            placeholderImage: UIImage(systemName: "footballcourt")
+        )
         
         leagueName.text = league.name
-        countryName.text = league.countryName
+        countryName.text = league.country
     }
 }

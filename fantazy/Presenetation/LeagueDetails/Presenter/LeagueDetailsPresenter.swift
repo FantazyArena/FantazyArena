@@ -5,131 +5,57 @@
 //  Created by Ahmed El Sayyad Mohamed on 09/05/2026.
 //
 
-import Foundation
-
 class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
 
-    weak var view: LeagueDetailsViewProtocol?
-
-    let teams: [Team] = [
-
-        // 1. FC Barcelona
-        Team(
-            thumbnail: "barcelona_logo.jpg",
-            name: "Barcelona",
-            coach: "Ahmed",
-            players: [
-                Player(name: "Player", number: "10", position: "Attacker", image: "")
-            ]
-        ),
-        Team(
-            thumbnail: "barcelona_logo.jpg",
-            name: "Barcelona",
-            coach: "Ahmed",
-            players: [
-                Player(name: "Player", number: "10", position: "Attacker", image: "")
-            ]
-        ),
-        Team(
-            thumbnail: "barcelona_logo.jpg",
-            name: "Barcelona",
-            coach: "Ahmed",
-            players: [
-                Player(name: "Player", number: "10", position: "Attacker", image: "")
-            ]
-        ),
-        Team(
-            thumbnail: "barcelona_logo.jpg",
-            name: "Barcelona",
-            coach: "Ahmed",
-            players: [
-                Player(name: "Player", number: "10", position: "Attacker", image: "")
-            ]
-        ),
-    ]
-
-    private lazy var events: [Event] = [
-        Event(id: "1",
-              homeTeam: teams[0],
-              awayTeam: teams[1],
-              date: "12 May 2026",
-              time: "20:45",
-              stadium: "Camp Nou",
-              league: "Champions League",
-              status: .upcoming),
-        Event(id: "2",
-              homeTeam: teams[2],
-              awayTeam: teams[3],
-              date: "13 May 2026",
-              time: "18:00",
-              stadium: "Emirates Stadium",
-              league: "Champions League",
-              status: .live),
-        Event(id: "3",
-              homeTeam: teams[1],
-              awayTeam: teams[3],
-              date: "15 May 2026",
-              time: "21:00",
-              stadium: "Anfield",
-              league: "Champions League",
-              status: .upcoming)
-    ]
     
-    private let leagueId: String
+    weak var view: LeagueDetailsViewProtocol?
+    
+    private var teams: [Team] = []
+    private var events: [Event] = []
+    private var latestResults: [LatestResult] = []
 
-    init(leagueId: String) {
+    private var currentLeague: League?
+    private let leagueId: String
+    private let sportType:SportType
+    
+    init(leagueId: String,sportType:SportType,currentLeague:League) {
         self.leagueId = leagueId
+        self.sportType = sportType
+        self.currentLeague = currentLeague
     }
 
-    private lazy var latestResults: [LatestResult] = [
-        LatestResult(
-            homeTeamLogo: "teamA_logo",
-            awayTeamLogo: "teamB_logo",
-            homeTeamName: "Team A",
-            awayTeamName: "Team B",
-            result: "2 - 1",
-            date: "2024-05-10"
-        ),
-        LatestResult(
-            homeTeamLogo: "teamC_logo",
-            awayTeamLogo: "teamD_logo",
-            homeTeamName: "Team C",
-            awayTeamName: "Team D",
-            result: "0 - 0",
-            date: "2024-05-09"
-        ),
-        LatestResult(
-            homeTeamLogo: "teamE_logo",
-            awayTeamLogo: "teamF_logo",
-            homeTeamName: "Team E",
-            awayTeamName: "Team F",
-            result: "1 - 3",
-            date: "2024-05-08"
-        ),
-        LatestResult(
-            homeTeamLogo: "teamG_logo",
-            awayTeamLogo: "teamH_logo",
-            homeTeamName: "Team G",
-            awayTeamName: "Team H",
-            result: "4 - 2",
-            date: "2024-05-07"
-        ),
-        LatestResult(
-            homeTeamLogo: "teamI_logo",
-            awayTeamLogo: "teamJ_logo",
-            homeTeamName: "Team I",
-            awayTeamName: "Team J",
-            result: "1 - 1",
-            date: "2024-05-06"
-        )
-    ]
-    
-    private let league: League = League(id: "id", name: "English Premier League", badgeURL: "", countryName: "England")
-    
     func viewDidLoad() {
-        view?.loadLeagueDetails(league: league)
-        view?.reloadTeams()
-        view?.reloadEvents()
+        
+        view?.updateFavoriteState(isFavorite: isFavorite())
+    }
+    
+    func loadLeagueDetails() {
+        
+        Task {
+            await MainActor.run { view?.showLoading() }
+
+            do {
+                 let idInt = Int(leagueId)
+
+                let details = try await SportsRepository.shared.getLeagueDetails(for: sportType, leagueId: idInt!)
+                
+                self.teams = details.teams
+                self.latestResults = details.latest
+                self.events = details.upcoming
+                
+                await MainActor.run {
+                    self.view?.hideLoading()
+                    self.view?.reloadLeagueDetails()
+                    self.view?.reloadTeams()
+                    self.view?.reloadEvents()
+                }
+            } catch {
+                await MainActor.run {
+                    self.view?.hideLoading()
+                    self.view?.showError(message: error.localizedDescription)
+                }
+            }
+        }
     }
 
     func isFavorite() -> Bool {
@@ -137,20 +63,20 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     }
     
     func toggleFavorite() {
-        if(SportsRepository.shared.isLeagueFavorite(id: leagueId)){
-            //TODO: remove favorite
+        if isFavorite() {
             view?.updateFavoriteState(isFavorite: false)
-        }else{
-            SportsRepository.shared.addLeagueToFavorite(league: league)
+            SportsRepository.shared.removeLeagueFromFavorite(leagueId: currentLeague!.id ?? "")
+        } else  {
+            SportsRepository.shared.addLeagueToFavorite(league: currentLeague!)
             view?.updateFavoriteState(isFavorite: true)
         }
     }
 
-    func numberOfTeams() -> Int { return teams.count }
-    func numberOfEvents() -> Int { return events.count }
-    func numberOfLatestResults() -> Int { return latestResults.count }
+    func numberOfTeams() -> Int { teams.count }
+    func numberOfEvents() -> Int { events.count }
+    func numberOfLatestResults() -> Int { latestResults.count }
     
-    func getTeam(at index: Int) -> Team { return teams[index] }
-    func getEvent(at index: Int) -> Event { return events[index] }
-    func getLatestResult(at index: Int) -> LatestResult { return latestResults[index] }
+    func getTeam(at index: Int) -> Team { teams[index] }
+    func getEvent(at index: Int) -> Event { events[index] }
+    func getLatestResult(at index: Int) -> LatestResult { latestResults[index] }
 }

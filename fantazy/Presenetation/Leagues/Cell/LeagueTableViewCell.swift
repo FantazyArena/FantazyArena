@@ -35,7 +35,7 @@ class LeagueTableViewCell: UITableViewCell {
 
             badgeImageView.sd_setImage(
                 with: url,
-                placeholderImage: UIImage(systemName: "sportscourt"),
+                placeholderImage: UIImage(systemName: "globe.europe.africa.fill"),
                 options: [
                     .highPriority,
                     .continueInBackground,
@@ -47,7 +47,7 @@ class LeagueTableViewCell: UITableViewCell {
         } else {
 
             badgeImageView.image =
-                UIImage(systemName: "sportscourt")
+                UIImage(systemName: "globe.europe.africa.fill")
         }
     }
 

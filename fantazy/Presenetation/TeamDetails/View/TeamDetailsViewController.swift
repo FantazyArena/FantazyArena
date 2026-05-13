@@ -24,6 +24,7 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
     var sportType: SportType? = .football
     var coach: String?
     var players: [Player]?
+    var teamImageURL:String?
     
     override func loadView() {
         super.loadView()
@@ -141,9 +142,9 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
     }
     
     func loadTeam(team: TeamDetails){
-        teamImage.sd_setImage(with: URL(string: team.thumbnail ?? ""), placeholderImage: UIImage(named: "football"))
+        teamImage.sd_setImage(with: URL(string: teamImageURL ?? ""), placeholderImage: UIImage(named: "football"))
 
-        teamNameLabel.text = team.name
+        teamNameLabel.text = teamName
         teamCoach.text = coach
         teamCountry.text = team.national
         teamFoundedDate.text = team.founded
