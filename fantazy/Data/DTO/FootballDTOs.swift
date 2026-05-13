@@ -24,13 +24,23 @@ struct FootballTeamDTO: Decodable {
     let teamLogo: String?
     let national: String?
     let players: [FootballPlayerDTO]?
+    let coaches: [FootballCoachDTO]?
 
     enum CodingKeys: String, CodingKey {
         case teamKey = "team_key"
         case teamName = "team_name"
         case teamLogo = "team_logo"
         case national = "team_national"
+        case coaches = "coaches"
         case players
+    }
+}
+
+struct FootballCoachDTO: Decodable{
+    let coachName: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case coachName = "coach_name"
     }
 }
 

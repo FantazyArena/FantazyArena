@@ -94,8 +94,20 @@ extension AppCoordinator {
     }
 
     func navigateToTeamDetails(team: Team) {
-        let vc = TeamDetailsViewController(nibName: "TeamDetailsViewController", bundle: nil)
-        vc.team = team
-        homeNavigationController.pushViewController(vc, animated: true)
+
+        let vc = TeamDetailsViewController(
+            nibName: "TeamDetailsViewController",
+            bundle: nil
+        )
+
+        vc.players = team.players
+        vc.coach = team.coach
+        vc.teamName = team.name
+        vc.sportType = .football
+
+        homeNavigationController.pushViewController(
+            vc,
+            animated: true
+        )
     }
 }

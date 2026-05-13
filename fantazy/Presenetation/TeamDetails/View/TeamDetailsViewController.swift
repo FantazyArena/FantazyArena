@@ -4,6 +4,7 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
                                  UITableViewDelegate, UITableViewDataSource{
     var preseneter: TeamDetailsPresenterProtocol!
     
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var banner: UIView!
     @IBOutlet var tableView: UITableView!
     
@@ -11,13 +12,18 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
     @IBOutlet var twitter: UIView!
     @IBOutlet var youtube: UIView!
     
-    @IBOutlet var teamStadium: UILabel!
-    @IBOutlet var teamNationality: UILabel!
+    @IBOutlet var teamCountry: UILabel!
+    @IBOutlet var teamCoach: UILabel!
     @IBOutlet var teamFoundedDate: UILabel!
-    @IBOutlet var teamName: UILabel!
+    @IBOutlet var teamNameLabel: UILabel!
     @IBOutlet var teamImage: UIImageView!
     
-    var team: Team?
+    @IBOutlet var loadingSection: UIView!
+    
+    var teamName: String?
+    var sportType: SportType? = .football
+    var coach: String?
+    var players: [Player]?
     
     override func loadView() {
         super.loadView()
@@ -34,9 +40,10 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "PlayerTableViewCell")
+        tableView.sectionHeaderTopPadding = 0
         
         initSocialViews()
-        preseneter.loadData()
+        preseneter.loadData(teamName: teamName ?? "", sportType: sportType ?? .football)
     }
     
     func applyGradient() {
@@ -67,44 +74,97 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
     }
     
     @objc func onYoutubeClick() {
-        preseneter.onSocialClicked(with: "Youtube")
+        preseneter.onSocialClicked(with: SocialOption.youtube)
     }
     
     @objc func onFacebookClick() {
-        preseneter.onSocialClicked(with: "Facebook")
+        preseneter.onSocialClicked(with: SocialOption.facebook)
     }
     
     @objc func onTwitterClick() {
-        preseneter.onSocialClicked(with: "Twitter")
+        preseneter.onSocialClicked(with: SocialOption.twitter)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return players != nil ? 1 : 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return players != nil ? "Players" : nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if(players == nil){
+            return nil
+        }
+        if(players?.isEmpty ?? true){
+            return nil
+        }
+        
+        let header = UILabel()
+        header.text = "Players"
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return preseneter.playersCount()
+        return players?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath) as! PlayerTableViewCell
+        guard let player = players?[indexPath.row] else{
+            return UITableViewCell()
+        }
         
-        cell.config(with: preseneter.getPlayer(with: indexPath.row))
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath) as! PlayerTableViewCell
+                
+        var corners = Corners.none
+        switch(indexPath.row){
+            case 0: corners = Corners.top
+            case (players?.count ?? 0) - 1: corners = Corners.bottom
+            default: break
+        }
+        
+        cell.config(with: player, cornerRadius: corners)
         return cell
     }
     
-    func loadPlayers(players: [Player]){
-        tableView.reloadData()
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (players?.count ?? 0) - 1 {
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        } else {
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        }
     }
     
     func loadTeam(team: TeamDetails){
-        // Test the image
-        teamImage.image = UIImage(named: "basketball")
-        
-        //TODO: get the image using SDWebImage
-        teamName.text = team.name
-        teamNationality.text = team.national
-        teamStadium.text = team.stadium
+        teamImage.sd_setImage(with: URL(string: team.thumbnail ?? ""), placeholderImage: UIImage(named: "football"))
+
+        teamNameLabel.text = team.name
+        teamCoach.text = coach
+        teamCountry.text = team.national
         teamFoundedDate.text = team.founded
+    }
+    
+    func setLoading(with loading: Bool){
+        loadingSection.isHidden = !loading
+        
+        if loading {
+            loadingIndicator.startAnimating()
+        }else{
+            loadingIndicator.stopAnimating()
+        }
+    }
+    
+    func showError(_ message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+        })
+        present(alert, animated: true)
     }
 }
