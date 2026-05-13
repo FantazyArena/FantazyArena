@@ -96,6 +96,7 @@
 		90DBBAE62FB3EF9700598E5C /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DBBAE52FB3EF9700598E5C /* DateHelper.swift */; };
 		90E9E6082FB4A787005E86E7 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9E6072FB4A787005E86E7 /* RoundedCorner.swift */; };
 		90E9E60A2FB4B2C5005E86E7 /* SocialOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9E6092FB4B2C5005E86E7 /* SocialOption.swift */; };
+		90E9E6102FB4CB50005E86E7 /* ApiKeys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 90E9E60F2FB4CB50005E86E7 /* ApiKeys.xcconfig */; };
 		90F4A0012FAE35340065A241 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A0002FAE35340065A241 /* RemoteDataSourceProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -186,9 +187,9 @@
 		90DBBAE12FB3E42F00598E5C /* SportsEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsEndpoints.swift; sourceTree = "<group>"; };
 		90DBBAE32FB3E8FC00598E5C /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		90DBBAE52FB3EF9700598E5C /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
-		90E9E6052FB48DBF005E86E7 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
 		90E9E6072FB4A787005E86E7 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		90E9E6092FB4B2C5005E86E7 /* SocialOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialOption.swift; sourceTree = "<group>"; };
+		90E9E60F2FB4CB50005E86E7 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
 		90F4A0002FAE35340065A241 /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -687,7 +688,7 @@
 			isa = PBXGroup;
 			children = (
 				9018B1422FB3181B00ABE300 /* APIConfig.swift */,
-				9018B14D2FB3215400ABE300 /* ApiKeys.xcconfig */,
+				90E9E60F2FB4CB50005E86E7 /* ApiKeys.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -782,6 +783,7 @@
 				584140C92FAFC5A000E91D04 /* LeagueDetailsViewController.xib in Resources */,
 				90DBBA942FB3D70600598E5C /* SwitchSettingOptionTableViewCell.xib in Resources */,
 				908A80B32FAE3BB8000C49CE /* Main.storyboard in Resources */,
+				90E9E6102FB4CB50005E86E7 /* ApiKeys.xcconfig in Resources */,
 				9047A0D02FAA7FC5005DDA89 /* LaunchScreen.storyboard in Resources */,
 				90DBBAC52FB3DBF300598E5C /* SportCollectionViewCell.xib in Resources */,
 				906A7D292FB222DA00CC9913 /* FavoriteTableViewCell.xib in Resources */,
@@ -894,7 +896,7 @@
 /* Begin XCBuildConfiguration section */
 		9047A0D22FAA7FC5005DDA89 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90E9E6052FB48DBF005E86E7 /* ApiKeys.xcconfig */;
+			baseConfigurationReference = 90E9E60F2FB4CB50005E86E7 /* ApiKeys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -956,7 +958,7 @@
 		};
 		9047A0D32FAA7FC5005DDA89 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90E9E6052FB48DBF005E86E7 /* ApiKeys.xcconfig */;
+			baseConfigurationReference = 90E9E60F2FB4CB50005E86E7 /* ApiKeys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

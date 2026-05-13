@@ -6,7 +6,7 @@ class TeamDetailsPresenter: TeamDetailsPresenterProtocol{
     
     let team = TeamDetails(
         thumbnail: "barcelona_logo.jpg",
-        name: "FC Barcelona",
+        name: "Barcelona",
         founded: "1899",
         national: "Xavi Hernández",
         players: [

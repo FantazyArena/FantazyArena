@@ -16,9 +16,35 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         // 1. FC Barcelona
         Team(
             thumbnail: "barcelona_logo.jpg",
-            name: "FC Barcelona",
-            coach: "",
-            players: []
+            name: "Barcelona",
+            coach: "Ahmed",
+            players: [
+                Player(name: "Player", number: "10", position: "Attacker", image: "")
+            ]
+        ),
+        Team(
+            thumbnail: "barcelona_logo.jpg",
+            name: "Barcelona",
+            coach: "Ahmed",
+            players: [
+                Player(name: "Player", number: "10", position: "Attacker", image: "")
+            ]
+        ),
+        Team(
+            thumbnail: "barcelona_logo.jpg",
+            name: "Barcelona",
+            coach: "Ahmed",
+            players: [
+                Player(name: "Player", number: "10", position: "Attacker", image: "")
+            ]
+        ),
+        Team(
+            thumbnail: "barcelona_logo.jpg",
+            name: "Barcelona",
+            coach: "Ahmed",
+            players: [
+                Player(name: "Player", number: "10", position: "Attacker", image: "")
+            ]
         ),
     ]
 

@@ -91,14 +91,6 @@ class LeagueDetailsViewController: UIViewController {
 
     private func setupCollectionView() {
 
-        let layout = createCompositionalLayout()
-
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemBackground
-        
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-
         collectionView.register(
             UINib(nibName: "TeamCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: TeamCollectionViewCell.reuseIdentifier
@@ -309,25 +301,13 @@ extension LeagueDetailsViewController: UICollectionViewDelegate {
         switch section {
             case .teams:
                 let team = presenter.getTeam(at: indexPath.item)
-                print("Tapped team: \(team.name)")
+                coordinator?.navigateToTeamDetails(team: team)
             case .events:
                 let event = presenter.getEvent(at: indexPath.item)
                 print("Tapped event: \(event.homeTeam.name) vs \(event.awayTeam.name)")
             case .latestResults:
                 let result = presenter.getLatestResult(at: indexPath.item)
                 print("Tapped result: \(result.homeTeamName) vs \(result.awayTeamName)")
-        case .teams:
-
-            let team = presenter.getTeam(
-                at: indexPath.item
-            )
-
-            coordinator?.navigateToTeamDetails(
-                team: team
-            )
-        case .events:
-            let event = presenter.getEvent(at: indexPath.item)
-            print("Tapped event: \(event.homeTeam.name) vs \(event.awayTeam.name)")
         }
     }
 }
@@ -342,6 +322,8 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
 
     func reloadEvents() {
         collectionView.reloadSections(IndexSet(integer: Section.events.rawValue))
+        
+        collectionView.reloadSections(IndexSet(integer: Section.latestResults.rawValue))
     }
 
     func updateFavoriteState(isFavorite: Bool) {

@@ -20,14 +20,10 @@ class TeamDetailsViewController: UIViewController, TeamDetailsViewProtocol,
     
     @IBOutlet var loadingSection: UIView!
     
-    var teamName: String? = "Real Madrid"
+    var teamName: String?
     var sportType: SportType? = .football
-    var coach: String? = "Coach"
-    var players: [Player]? = [
-        Player(name: "Mohamed Amir", number: "10", position: "Attack", image: ""),
-        Player(name: "Mohamed Amir", number: "10", position: "Attack", image: ""),
-        Player(name: "Mohamed Amir", number: "10", position: "Attack", image: "")
-    ]
+    var coach: String?
+    var players: [Player]?
     
     override func loadView() {
         super.loadView()
