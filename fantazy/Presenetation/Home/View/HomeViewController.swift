@@ -18,6 +18,8 @@ class HomeViewController: UIViewController,
         let nib = UINib(nibName: "HomeViewController", bundle: nil)
         let view = nib.instantiate(withOwner: self).first as! UIView
         self.view = view
+        
+        self.navigationItem.backButtonTitle = "Home"
     }
     
     override func viewDidLoad() {

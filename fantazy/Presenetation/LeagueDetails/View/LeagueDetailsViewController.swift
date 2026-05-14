@@ -308,6 +308,10 @@ extension LeagueDetailsViewController: UICollectionViewDelegate {
                     showNetworkAlert()
                     return
                 }
+                if(sportType == .basketball){
+                    showCommingSoonAlert()
+                    return
+                }
             
                 let team = presenter.getTeam(at: indexPath.item)
                 coordinator?.navigateToTeamDetails(team: team)
