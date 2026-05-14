@@ -16,7 +16,7 @@ class FavoriteTableViewCell: UITableViewCell {
         card.layer.cornerRadius = 12
         card.clipsToBounds = true
         
-        leagueImage.layer.cornerRadius = leagueImage.frame.width
+        leagueImage.layer.cornerRadius = leagueImage.frame.width / 2
         leagueImage.clipsToBounds = true
     }
 

@@ -25,14 +25,14 @@
                                 <rect key="frame" x="0.0" y="4" width="364" height="97"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xiI-rg-uvu">
-                                        <rect key="frame" x="8" y="16" width="50" height="50"/>
+                                        <rect key="frame" x="8" y="16" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="4q0-gP-jZL"/>
-                                            <constraint firstAttribute="height" constant="50" id="7aN-ta-MTk"/>
+                                            <constraint firstAttribute="width" constant="60" id="4q0-gP-jZL"/>
+                                            <constraint firstAttribute="height" constant="60" id="7aN-ta-MTk"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TO-b3-KTH">
-                                        <rect key="frame" x="70" y="22" width="286" height="38.5"/>
+                                        <rect key="frame" x="80" y="27" width="276" height="38.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dih-Pq-77J">
                                                 <rect key="frame" x="0.0" y="0.0" width="105.5" height="19.5"/>
@@ -47,7 +47,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRi-nh-Je5">
-                                                <rect key="frame" x="254" y="10" width="24" height="18"/>
+                                                <rect key="frame" x="244" y="10" width="24" height="18"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" name="MutedForeground"/>
                                                 <constraints>

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritesViewController" customModule="fantazy" customModuleProvider="target">
             <connections>
+                <outlet property="emptyLabel" destination="oBH-LQ-Cph" id="dCJ-JI-B9e"/>
                 <outlet property="tableView" destination="9eK-xY-OrN" id="r1C-B1-L0M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,15 +33,25 @@
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <color key="sectionIndexBackgroundColor" name="Background"/>
                 </tableView>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favorites Yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBH-LQ-Cph">
+                    <rect key="frame" x="12" y="56" width="390" height="794"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <color key="textColor" name="AccentForeground"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="9eK-xY-OrN" firstAttribute="leading" secondItem="Vcv-ku-WZL" secondAttribute="leading" id="0HW-hf-H4f"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9eK-xY-OrN" secondAttribute="bottom" constant="12" id="AoK-Bc-m7T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oBH-LQ-Cph" secondAttribute="trailing" constant="12" id="GeZ-O6-xuh"/>
+                <constraint firstItem="oBH-LQ-Cph" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="SrZ-3I-XaK"/>
                 <constraint firstItem="9eK-xY-OrN" firstAttribute="top" secondItem="Vcv-ku-WZL" secondAttribute="bottom" constant="24" id="TjK-RY-vBT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vcv-ku-WZL" secondAttribute="trailing" constant="12" id="Yjr-aL-NCd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oBH-LQ-Cph" secondAttribute="bottom" constant="12" id="hsK-WB-tVR"/>
                 <constraint firstItem="Vcv-ku-WZL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="tLm-KL-PcO"/>
+                <constraint firstItem="oBH-LQ-Cph" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="vqB-SN-obd"/>
                 <constraint firstItem="Vcv-ku-WZL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wt5-bI-5DF"/>
                 <constraint firstItem="9eK-xY-OrN" firstAttribute="trailing" secondItem="Vcv-ku-WZL" secondAttribute="trailing" id="yZF-f3-iUw"/>
             </constraints>
@@ -48,6 +59,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentForeground">
+            <color red="0.011764705882352941" green="0.0078431372549019607" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Background">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

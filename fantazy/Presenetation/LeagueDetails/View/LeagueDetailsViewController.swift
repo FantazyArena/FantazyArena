@@ -44,6 +44,10 @@ class LeagueDetailsViewController: UIViewController {
         presenter.loadLeagueDetails()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        updateFavoriteState(isFavorite: presenter.isFavorite())
+    }
+    
     private func setupPresenter() {
         guard let leagueId = leagueId else { return }
 
@@ -300,6 +304,11 @@ extension LeagueDetailsViewController: UICollectionViewDelegate {
         guard let section = Section(rawValue: indexPath.section) else { return }
         switch section {
             case .teams:
+                if(!NetworkMonitor.isConnected()){
+                    showNetworkAlert()
+                    return
+                }
+            
                 let team = presenter.getTeam(at: indexPath.item)
                 coordinator?.navigateToTeamDetails(team: team)
             case .events:
@@ -371,5 +380,9 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
         
         self.leagueName.text = league.name ?? ""
         self.leagueCountryName.text = league.countryName ?? ""
+    }
+    
+    func showNetworkAlert() {
+        showNoInternetAlert()
     }
 }

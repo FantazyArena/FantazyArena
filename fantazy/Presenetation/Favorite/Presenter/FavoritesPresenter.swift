@@ -13,6 +13,7 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
     
     private func fetchData() {
         self.favoriteLeagues = SportsRepository.shared.getAllFavorites()
+        view?.hideLoading()
         view?.renderFavorites()
     }
     
@@ -26,10 +27,14 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
     
     func selectLeague(by index: Int) {
         
-        let fav = favoriteLeagues[index]
-        
-        let league = League(id: "\(fav.id)", name: fav.name ?? "", badgeURL: fav.logo ?? "", countryName: fav.country ?? "")
-        view?.navigateToLeagueDetails(league: league)
+        if(NetworkMonitor.isConnected()){
+            let fav = favoriteLeagues[index]
+            
+            let league = League(id: "\(fav.id)", name: fav.name ?? "", badgeURL: fav.logo ?? "", countryName: fav.country ?? "")
+            view?.navigateToLeagueDetails(league: league)
+        }else{
+            view?.showNetworkAlert()
+        }
     }
     
     func removeRequest(at index: Int) {
@@ -42,6 +47,7 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
                 LeagueDAO.shared.removeFavorite(id: id)
                 self?.fetchData()
                 
+                self?.view?.showToast(message: "League deleted successfully", seconds: 1)
             }
         }
     }

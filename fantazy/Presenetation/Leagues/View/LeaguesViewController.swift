@@ -147,6 +147,10 @@ class LeaguesViewController: UIViewController ,
 
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
+        if(!NetworkMonitor.isConnected()){
+            showNetworkAlert()
+            return
+        }
         
         let cell = tableView.cellForRow(at: indexPath) as? LeagueTableViewCell
         cell?.animateSelection()
@@ -160,4 +164,7 @@ class LeaguesViewController: UIViewController ,
         )
     }
     
+    func showNetworkAlert() {
+        showNoInternetAlert()
+    }
 }
