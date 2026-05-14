@@ -34,11 +34,13 @@ class PlayerTableViewCell: UITableViewCell {
     func config(with player: Player, cornerRadius: Corners){
         self.corners = cornerRadius
         
-        playerImage.image = UIImage(named: "football")
-        
-        //TODO: get the image using SDWebImage
+
+        self.playerImage.sd_setImage(
+            with: URL(string: player.image),
+            placeholderImage: UIImage(systemName: "person.circle")
+        )
+  
         playerName.text = player.name
-        // playerImage.text = player.image
         playerPosition.text = player.position
         playerNumber.text = player.number
     }

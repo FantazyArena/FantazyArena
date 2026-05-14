@@ -4,27 +4,29 @@
 //
 //  Created by Ahmed El Sayyad Mohamed on 09/05/2026.
 //
-
 import UIKit
+import SDWebImage
 
 class LeagueDetailsViewController: UIViewController {
-
 
     @IBOutlet var leagueImage: UIImageView!
     @IBOutlet var leagueName: UILabel!
     @IBOutlet var leagueCountryName: UILabel!
     
+    @IBOutlet weak var emptyData: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     @IBOutlet var collectionView: UICollectionView!
-
-    private var activityIndicator: UIActivityIndicatorView!
 
     private var favoriteBarButton: UIBarButtonItem!
 
     var presenter: LeagueDetailsPresenterProtocol!
 
     var leagueId: String?
-
+    var sportType :SportType?
     weak var coordinator: AppCoordinator?
+    var currentLeague :League?
     
     enum Section: Int, CaseIterable {
         case teams = 0
@@ -37,21 +39,21 @@ class LeagueDetailsViewController: UIViewController {
         setupPresenter()
         setupNavigationBar()
         setupCollectionView()
-        setupActivityIndicator()
+        loadLeagueDetails(league:currentLeague!)
         presenter.viewDidLoad()
+        presenter.loadLeagueDetails()
     }
 
-
     private func setupPresenter() {
-
         guard let leagueId = leagueId else { return }
 
         let presenter = LeagueDetailsPresenter(
-            leagueId: leagueId
+            leagueId: leagueId ,
+            sportType: sportType ?? .football,
+            currentLeague: currentLeague!
         )
 
         presenter.view = self
-
         self.presenter = presenter
     }
     
@@ -76,21 +78,7 @@ class LeagueDetailsViewController: UIViewController {
         presenter.toggleFavorite()
     }
 
-    private func setupActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(activityIndicator)
-
-        NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-    }
-
-
     private func setupCollectionView() {
-
         collectionView.register(
             UINib(nibName: "TeamCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: TeamCollectionViewCell.reuseIdentifier
@@ -114,10 +102,14 @@ class LeagueDetailsViewController: UIViewController {
     }
 
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-  
         return UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self,
                   let section = Section(rawValue: sectionIndex) else { return nil }
+
+            let itemCount = self.collectionView(self.collectionView, numberOfItemsInSection: sectionIndex)
+            if itemCount == 0 {
+                return self.makeEmptySection()
+            }
 
             switch section {
                 case .teams:  return self.makeTeamsSection()
@@ -125,6 +117,14 @@ class LeagueDetailsViewController: UIViewController {
                 case .latestResults: return self.makeLatestResultsSection()
             }
         }
+    }
+
+    private func makeEmptySection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(0.1), heightDimension: .absolute(0.1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return section
     }
 
     private func makeLatestResultsSection() -> NSCollectionLayoutSection {
@@ -153,7 +153,6 @@ class LeagueDetailsViewController: UIViewController {
     }
     
     private func makeTeamsSection() -> NSCollectionLayoutSection {
- 
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
             heightDimension: .fractionalHeight(1)
@@ -173,10 +172,8 @@ class LeagueDetailsViewController: UIViewController {
         )
 
         let section = NSCollectionLayoutSection(group: group)
-  
         section.orthogonalScrollingBehavior = .continuous
         section.interGroupSpacing = 8
-
         section.boundarySupplementaryItems = [makeSectionHeader()]
         return section
     }
@@ -201,7 +198,6 @@ class LeagueDetailsViewController: UIViewController {
         )
 
         let section = NSCollectionLayoutSection(group: group)
-
         section.orthogonalScrollingBehavior = .groupPaging
         section.interGroupSpacing = 12
         section.boundarySupplementaryItems = [makeSectionHeader()]
@@ -221,11 +217,9 @@ class LeagueDetailsViewController: UIViewController {
     }
 }
 
-
 extension LeagueDetailsViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-
         return Section.allCases.count
     }
 
@@ -247,7 +241,6 @@ extension LeagueDetailsViewController: UICollectionViewDataSource {
 
         switch section {
             case .teams:
-            
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: TeamCollectionViewCell.reuseIdentifier,
                     for: indexPath
@@ -282,11 +275,18 @@ extension LeagueDetailsViewController: UICollectionViewDataSource {
             for: indexPath
         ) as! SectionHeaderReusableView
 
-        switch Section(rawValue: indexPath.section) {
-            case .teams:  header.configure(title: "Teams")
-            case .events: header.configure(title: "Upcoming Matches")
-            case .latestResults: header.configure(title: "Latest Results")
-            case .none: break
+        let itemCount = self.collectionView(collectionView, numberOfItemsInSection: indexPath.section)
+        
+        if itemCount == 0 {
+            header.isHidden = true
+        } else {
+            header.isHidden = false
+            switch Section(rawValue: indexPath.section) {
+                case .teams:  header.configure(title: "Teams")
+                case .events: header.configure(title: "Upcoming Matches")
+                case .latestResults: header.configure(title: "Latest Results")
+                case .none: break
+            }
         }
         
         return header
@@ -312,18 +312,49 @@ extension LeagueDetailsViewController: UICollectionViewDelegate {
     }
 }
 
-
 extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
+    
+    func showLoading() {
+        loadingIndicator.startAnimating()
+        collectionView.isHidden = true
+        errorLabel.isHidden = true
+        emptyData.isHidden = true
+    }
+    
+    func hideLoading() {
+        loadingIndicator.stopAnimating()
+        loadingIndicator.isHidden = true
+        collectionView.isHidden = false
+    }
+    
+    func reloadLeagueDetails() {
+        let hasData = presenter.numberOfTeams() > 0 || presenter.numberOfEvents() > 0 || presenter.numberOfLatestResults() > 0
+        if hasData {
+            emptyData.isHidden = true
+            collectionView.isHidden = false
+            collectionView.reloadData()
+        } else {
+            showEmptyState()
+        }
+    }
+    
+    func showError(message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+        collectionView.isHidden = true
+    }
+    
+    func showEmptyState() {
+        emptyData.isHidden = false
+        collectionView.isHidden = true
+    }
 
     func reloadTeams() {
-        
-        collectionView.reloadSections(IndexSet(integer: Section.teams.rawValue))
+        collectionView.reloadData()
     }
 
     func reloadEvents() {
-        collectionView.reloadSections(IndexSet(integer: Section.events.rawValue))
-        
-        collectionView.reloadSections(IndexSet(integer: Section.latestResults.rawValue))
+        collectionView.reloadData()
     }
 
     func updateFavoriteState(isFavorite: Bool) {
@@ -331,11 +362,13 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
         favoriteBarButton.image = UIImage(systemName: imageName)
     }
     
-    func loadLeagueDetails(league: League){
-        // Test with named image
-        self.leagueImage.image = UIImage(named: "football")
+    func loadLeagueDetails(league: League) {
+        if let imageUrlString = league.badgeURL, let url = URL(string: imageUrlString) {
+            self.leagueImage.sd_setImage(with: url, placeholderImage: UIImage(named: "football"))
+        } else {
+            self.leagueImage.image = UIImage(named: "football")
+        }
         
-        //TODO: get the image using SDWebImage
         self.leagueName.text = league.name ?? ""
         self.leagueCountryName.text = league.countryName ?? ""
     }

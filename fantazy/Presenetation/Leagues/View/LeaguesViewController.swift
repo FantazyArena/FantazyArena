@@ -12,8 +12,6 @@ class LeaguesViewController: UIViewController ,
                              UITableViewDataSource,
                              LeaguesViewProtocol {
 
-    
-
     @IBOutlet weak var sportName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -22,6 +20,7 @@ class LeaguesViewController: UIViewController ,
     weak var coordinator: AppCoordinator?
     
     var presenter: LeaguesPresenterProtocol!
+    var sport:Sport?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,7 +154,9 @@ class LeaguesViewController: UIViewController ,
         let league = presenter.getLeague(at: indexPath.row)
 
         coordinator?.navigateToLeagueDetails(
-            leagueId: league.id ?? ""
+            leagueId: league.id ?? "",
+            sportType:sport?.type ?? .football,
+            league:league
         )
     }
     

@@ -24,6 +24,13 @@ final class FootballAPIService: SportService {
         return dtos.map(FootballMapper.toEvent)
     }
 
+    func getLatestResults(leagueId: Int, from: String, to: String) async throws -> [LatestResult] {
+            let dtos: [FootballEventDTO] = try await fetch(
+                endpoint: FixturesEndpoint(leagueId: leagueId, from: from, to: to)
+            )
+            return dtos.map(FootballMapper.toLatestResult)
+        }
+    
     func searchTeams(name: String) async throws -> [Team] {
         let dtos: [FootballTeamDTO] = try await fetch(endpoint: TeamsByNameEndpoint(teamName: name))
         return dtos.map(FootballMapper.toTeam)

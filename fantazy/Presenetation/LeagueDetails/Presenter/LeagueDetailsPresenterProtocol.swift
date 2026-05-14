@@ -8,13 +8,23 @@
 import Foundation
 
 protocol LeagueDetailsViewProtocol: AnyObject {
+    func showLoading()
+    func hideLoading()
+    
+    func reloadLeagueDetails()
     func reloadTeams()
     func reloadEvents()
+    
     func updateFavoriteState(isFavorite: Bool)
-    func loadLeagueDetails(league: League)
+    
+    func showError(message: String)
+    func showEmptyState()
 }
 
-protocol LeagueDetailsPresenterProtocol: AnyObject {
+protocol LeagueDetailsPresenterProtocol {
+    
+    func loadLeagueDetails()
+
     var view: LeagueDetailsViewProtocol? { get set }
     func viewDidLoad()
     func toggleFavorite()

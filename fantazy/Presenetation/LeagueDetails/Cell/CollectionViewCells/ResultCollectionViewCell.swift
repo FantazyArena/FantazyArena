@@ -28,8 +28,14 @@ class ResultCollectionViewCell: UICollectionViewCell {
         self.awayTeamName.text = result.awayTeamName
         self.date.text = result.date
         
-        //TODO: use SDWebImage to load the images
-        self.homeTeamImage.image = UIImage(named: "football")
-        self.awayTeamImage.image = UIImage(named: "football")
+        self.homeTeamImage.sd_setImage(
+            with: URL(string: result.homeTeamLogo),
+            placeholderImage: UIImage(systemName: "sportscourt.fill")
+        )
+        self.awayTeamImage.sd_setImage(
+            with: URL(string:result.awayTeamLogo),
+            placeholderImage: UIImage(systemName: "sportscourt.fill")
+        )
+    
     }
 }
