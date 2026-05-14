@@ -364,9 +364,9 @@ extension LeagueDetailsViewController: LeagueDetailsViewProtocol {
     
     func loadLeagueDetails(league: League) {
         if let imageUrlString = league.badgeURL, let url = URL(string: imageUrlString) {
-            self.leagueImage.sd_setImage(with: url, placeholderImage: UIImage(named: "football"))
+            self.leagueImage.sd_setImage(with: url, placeholderImage: UIImage(systemName:  "globe.europe.africa.fill"))
         } else {
-            self.leagueImage.image = UIImage(named: "football")
+            self.leagueImage.image = UIImage(systemName:  "globe.europe.africa.fill")
         }
         
         self.leagueName.text = league.name ?? ""

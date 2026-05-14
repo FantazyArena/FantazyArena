@@ -5,4 +5,7 @@ protocol SportsRepositoryProtocol {
     
     func addLeagueToFavorite(league: League)
     func isLeagueFavorite(id: String) -> Bool
+    
+    func removeLeagueFromFavorite(leagueId: String)
+    func getAllFavorites() -> [FavoriteLeague]
 }

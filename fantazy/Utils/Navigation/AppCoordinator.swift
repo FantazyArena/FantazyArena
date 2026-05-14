@@ -87,14 +87,22 @@ extension AppCoordinator {
         homeNavigationController.pushViewController(vc, animated: true)
     }
 
-    func navigateToLeagueDetails(leagueId: String,sportType:SportType,league:League) {
+    func navigateToLeagueDetails(leagueId: String, sportType: SportType, league: League) {
         let vc = LeagueDetailsViewController(nibName: "LeagueDetailsViewController", bundle: nil)
         vc.leagueId = leagueId
         vc.sportType = sportType
         vc.currentLeague = league
-        vc.presenter = LeagueDetailsPresenter(leagueId: leagueId,sportType:sportType,currentLeague:league)
+        vc.presenter = LeagueDetailsPresenter(leagueId: leagueId, sportType: sportType, currentLeague: league)
         vc.coordinator = self
-        homeNavigationController.pushViewController(vc, animated: true)
+        
+        let activeNavController: UINavigationController
+        if tabBarController.selectedIndex == 1 { 
+            activeNavController = favoritesNavigationController
+        } else {
+            activeNavController = homeNavigationController
+        }
+        
+        activeNavController.pushViewController(vc, animated: true)
     }
 
     func navigateToTeamDetails(team: Team) {

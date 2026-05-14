@@ -50,4 +50,15 @@ final class SportsRepository: SportsRepositoryProtocol {
     func isLeagueFavorite(id: String) -> Bool{
         return localDataSource.isLeagueFavorite(leagueId: id)
     }
+
+    func removeLeagueFromFavorite(leagueId: String){
+        localDataSource.removeLeagueFromFavorite(leagueId: leagueId)
+        
+    }
+    func getAllFavorites() -> [FavoriteLeague]{
+        let result = localDataSource.getAllFavorites()
+        
+        return result
+    }
+
 }

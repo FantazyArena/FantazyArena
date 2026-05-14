@@ -65,6 +65,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     func toggleFavorite() {
         if isFavorite() {
             view?.updateFavoriteState(isFavorite: false)
+            SportsRepository.shared.removeLeagueFromFavorite(leagueId: currentLeague!.id ?? "")
         } else  {
             SportsRepository.shared.addLeagueToFavorite(league: currentLeague!)
             view?.updateFavoriteState(isFavorite: true)

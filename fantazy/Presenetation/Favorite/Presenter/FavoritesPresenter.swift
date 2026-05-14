@@ -1,26 +1,48 @@
 class FavoritesPresenter: FavoritesPresenterProtocol {
     
-    let view: FavoritesViewProtocol
+    private weak var view: FavoritesViewProtocol?
+    private var favoriteLeagues: [FavoriteLeague] = []
     
-    let dummyData = [
-        League(id: "id", name: "Primuim", badgeURL: "", countryName: "Egypt"),
-        League(id: "id", name: "Silver", badgeURL: "", countryName: "Egypt"),
-        League(id: "id", name: "Gold", badgeURL: "", countryName: "Egypt"),
-    ]
-    
-    init(view: FavoritesViewProtocol){
+    init(view: FavoritesViewProtocol) {
         self.view = view
     }
     
-    func getLeaguesCount() -> Int{
-        return dummyData.count
+    func viewDidLoad() {
+        fetchData()
     }
     
-    func getLeague(by index: Int) -> League{
-        return dummyData[index]
+    private func fetchData() {
+        self.favoriteLeagues = SportsRepository.shared.getAllFavorites()
+        view?.renderFavorites()
     }
     
-    func selectLeague(by index: Int){
-        view.navigateToLeagueDetails(league: dummyData[index])
+    func getLeaguesCount() -> Int {
+        return favoriteLeagues.count
+    }
+    
+    func getLeague(by index: Int) -> FavoriteLeague {
+        return favoriteLeagues[index]
+    }
+    
+    func selectLeague(by index: Int) {
+        
+        let fav = favoriteLeagues[index]
+        
+        let league = League(id: "\(fav.id)", name: fav.name ?? "", badgeURL: fav.logo ?? "", countryName: fav.country ?? "")
+        view?.navigateToLeagueDetails(league: league)
+    }
+    
+    func removeRequest(at index: Int) {
+        let leagueToDelete = favoriteLeagues[index]
+        let name = leagueToDelete.name ?? "this league"
+        
+        view?.showDeleteConfirmation(for: name) { [weak self] confirmed in
+            if confirmed {
+                let id = Int(leagueToDelete.id)
+                LeagueDAO.shared.removeFavorite(id: id)
+                self?.fetchData()
+                
+            }
+        }
     }
 }
