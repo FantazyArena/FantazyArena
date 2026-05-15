@@ -51,6 +51,7 @@
 		902548A02FB2972700CA8601 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025489E2FB2972700CA8601 /* ResultCollectionViewCell.swift */; };
 		902548A12FB2972700CA8601 /* ResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9025489F2FB2972700CA8601 /* ResultCollectionViewCell.xib */; };
 		902548C32FB2D70F00CA8601 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902548C22FB2D70F00CA8601 /* NetworkManager.swift */; };
+		903210C62FB7B82F00081870 /* fantazyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903210C52FB7B82F00081870 /* fantazyTests.swift */; };
 		903C128C2FB5BF600093AED5 /* ApiKeys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 903C128B2FB5BF600093AED5 /* ApiKeys.xcconfig */; };
 		9047A0C12FAA7FC4005DDA89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C02FAA7FC4005DDA89 /* AppDelegate.swift */; };
 		9047A0C32FAA7FC4005DDA89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9047A0C22FAA7FC4005DDA89 /* SceneDelegate.swift */; };
@@ -113,6 +114,16 @@
 		90F4A0012FAE35340065A241 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A0002FAE35340065A241 /* RemoteDataSourceProtocol.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		903210BD2FB7B7BE00081870 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9047A0B52FAA7FC4005DDA89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9047A0BC2FAA7FC4005DDA89;
+			remoteInfo = fantazy;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5805A1E82FB2888100A426BF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		58091E612FB17A050059B3CC /* TeamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -154,6 +165,8 @@
 		9025489E2FB2972700CA8601 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		9025489F2FB2972700CA8601 /* ResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCollectionViewCell.xib; sourceTree = "<group>"; };
 		902548C22FB2D70F00CA8601 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		903210B92FB7B7BE00081870 /* fantazyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fantazyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		903210C52FB7B82F00081870 /* fantazyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fantazyTests.swift; sourceTree = "<group>"; };
 		903C128B2FB5BF600093AED5 /* ApiKeys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ApiKeys.xcconfig; sourceTree = "<group>"; };
 		9047A0BD2FAA7FC4005DDA89 /* fantazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fantazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9047A0C02FAA7FC4005DDA89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +232,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		903210B62FB7B7BE00081870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9047A0BA2FAA7FC4005DDA89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,10 +428,19 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
+		903210BA2FB7B7BE00081870 /* fantazyTests */ = {
+			isa = PBXGroup;
+			children = (
+				903210C52FB7B82F00081870 /* fantazyTests.swift */,
+			);
+			path = fantazyTests;
+			sourceTree = "<group>";
+		};
 		9047A0B42FAA7FC4005DDA89 = {
 			isa = PBXGroup;
 			children = (
 				9047A0BF2FAA7FC4005DDA89 /* fantazy */,
+				903210BA2FB7B7BE00081870 /* fantazyTests */,
 				9047A0BE2FAA7FC4005DDA89 /* Products */,
 				9018B1442FB3192700ABE300 /* Frameworks */,
 				58969DF02FB2AF260089FB20 /* Frameworks */,
@@ -423,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				9047A0BD2FAA7FC4005DDA89 /* fantazy.app */,
+				903210B92FB7B7BE00081870 /* fantazyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -827,6 +857,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		903210B82FB7B7BE00081870 /* fantazyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 903210C12FB7B7BE00081870 /* Build configuration list for PBXNativeTarget "fantazyTests" */;
+			buildPhases = (
+				903210B52FB7B7BE00081870 /* Sources */,
+				903210B62FB7B7BE00081870 /* Frameworks */,
+				903210B72FB7B7BE00081870 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				903210BE2FB7B7BE00081870 /* PBXTargetDependency */,
+			);
+			name = fantazyTests;
+			productName = fantazyTests;
+			productReference = 903210B92FB7B7BE00081870 /* fantazyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9047A0BC2FAA7FC4005DDA89 /* fantazy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9047A0D42FAA7FC5005DDA89 /* Build configuration list for PBXNativeTarget "fantazy" */;
@@ -860,6 +908,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					903210B82FB7B7BE00081870 = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 9047A0BC2FAA7FC4005DDA89;
+					};
 					9047A0BC2FAA7FC4005DDA89 = {
 						CreatedOnToolsVersion = 13.2;
 					};
@@ -884,11 +936,19 @@
 			projectRoot = "";
 			targets = (
 				9047A0BC2FAA7FC4005DDA89 /* fantazy */,
+				903210B82FB7B7BE00081870 /* fantazyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		903210B72FB7B7BE00081870 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9047A0BB2FAA7FC4005DDA89 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -923,6 +983,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		903210B52FB7B7BE00081870 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903210C62FB7B82F00081870 /* fantazyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9047A0B92FAA7FC4005DDA89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1006,7 +1074,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		903210BE2FB7B7BE00081870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9047A0BC2FAA7FC4005DDA89 /* fantazy */;
+			targetProxy = 903210BD2FB7B7BE00081870 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		903210BF2FB7B7BE00081870 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantazyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fantazy.app/fantazy";
+			};
+			name = Debug;
+		};
+		903210C02FB7B7BE00081870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fantazyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fantazy.app/fantazy";
+			};
+			name = Release;
+		};
 		9047A0D22FAA7FC5005DDA89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1182,6 +1292,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		903210C12FB7B7BE00081870 /* Build configuration list for PBXNativeTarget "fantazyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				903210BF2FB7B7BE00081870 /* Debug */,
+				903210C02FB7B7BE00081870 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9047A0B82FAA7FC4005DDA89 /* Build configuration list for PBXProject "fantazy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
