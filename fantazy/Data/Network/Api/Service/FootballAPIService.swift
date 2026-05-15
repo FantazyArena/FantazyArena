@@ -3,9 +3,13 @@ import Alamofire
 final class FootballAPIService: SportService {
 
     static let shared = FootballAPIService()
-    private init() {}
-
     private let baseURL = ApiConfig.FOOTBALL_BASE_URL
+    private let session: Session
+    
+    init(session: Session = .default ) {
+        self.session = session
+    }
+
 
     func getLeagues() async throws -> [League] {
         let dtos: [FootballLeagueDTO] = try await fetch(endpoint: LeaguesEndpoint())

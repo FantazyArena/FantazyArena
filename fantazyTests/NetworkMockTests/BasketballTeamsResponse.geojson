@@ -1,0 +1,10 @@
+{
+    "success": 1,
+    "result": [
+        {
+            "team_key": 1,
+            "team_name": "LA Lakers",
+            "team_logo": "https://example.com/lakers.png"
+        }
+    ]
+}

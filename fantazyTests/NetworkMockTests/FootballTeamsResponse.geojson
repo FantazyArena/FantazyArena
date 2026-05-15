@@ -1,0 +1,24 @@
+{
+    "success": 1,
+    "result": [
+        {
+            "team_key": 10,
+            "team_name": "Arsenal",
+            "team_logo": "https://example.com/arsenal.png",
+            "team_national": "No",
+            "coaches": [
+                { "coach_name": "Mikel Arteta" }
+            ],
+            "players": [
+                {
+                    "player_key": 1,
+                    "player_name": "Saka",
+                    "player_number": "7",
+                    "player_type": "Midfielders",
+                    "player_image": "",
+                    "player_age": "22"
+                }
+            ]
+        }
+    ]
+}

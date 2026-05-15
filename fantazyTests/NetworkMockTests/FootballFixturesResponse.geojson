@@ -1,0 +1,25 @@
+{
+    "success": 1,
+    "result": [
+        {
+            "event_key": 100,
+            "event_date": "2024-01-15",
+            "event_time": "20:00",
+            "event_home_team": "Arsenal",
+            "home_team_key": 10,
+            "event_away_team": "Chelsea",
+            "away_team_key": 11,
+            "event_final_result": "2-1",
+            "event_halftime_result": "1-0",
+            "event_status": "Finished",
+            "event_live": "0",
+            "country_name": "England",
+            "league_name": "Premier League",
+            "league_key": 1,
+            "league_season": "2023/2024",
+            "event_stadium": "Emirates Stadium",
+            "home_team_logo": "https://example.com/arsenal.png",
+            "away_team_logo": "https://example.com/chelsea.png"
+        }
+    ]
+}

@@ -20,7 +20,7 @@ struct FootballLeagueDTO: Decodable {
 
 struct FootballTeamDTO: Decodable {
     let teamKey: Int
-    let teamName: String
+    let teamName: String?
     let teamLogo: String?
     let national: String?
     let players: [FootballPlayerDTO]?

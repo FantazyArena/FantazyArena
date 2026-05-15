@@ -9,7 +9,11 @@ protocol TeamDetailsAPIServiceProtocol {
 final class TeamDetailsAPIService: TeamDetailsAPIServiceProtocol {
 
     static let shared = TeamDetailsAPIService()
-    private init() {}
+    private let session: Session
+
+    private init(session: Session = .default ) {
+        self.session = session
+    }
 
     func getFootballTeamDetails(name: String) async throws -> FootballTeamDetailsDTO? {
         let endpoint = TeamDetailsEndpoint(teamName: name)
