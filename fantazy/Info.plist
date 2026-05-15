@@ -15,6 +15,11 @@
 	<string>${TEAM_API_KEY}</string>
 	<key>SPORTS_API_KEY</key>
 	<string>${SPORTS_API_KEY}</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
