@@ -1,0 +1,24 @@
+{
+    "success": 1,
+    "result": [
+        {
+            "event_key": 200,
+            "event_date": "2024-01-15",
+            "event_time": "21:00",
+            "event_home_team": "LA Lakers",
+            "home_team_key": 1,
+            "event_away_team": "Boston Celtics",
+            "away_team_key": 2,
+            "event_final_result": "110-105",
+            "event_quarter": "Q4",
+            "event_status": "Finished",
+            "event_live": "0",
+            "country_name": "USA",
+            "league_name": "NBA",
+            "league_key": 1,
+            "league_season": "2023/2024",
+            "event_home_team_logo": "https://example.com/lakers.png",
+            "event_away_team_logo": "https://example.com/celtics.png"
+        }
+    ]
+}

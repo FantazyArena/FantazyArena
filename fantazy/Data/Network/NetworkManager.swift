@@ -1,6 +1,15 @@
 import Alamofire
 
-final class NetworkManager {
+
+protocol NetworkManagerProtocol {
+    func request<T: Decodable>(
+        endpoint: Endpoint,
+        api: ApiType,
+        model: T.Type
+    ) async throws -> T
+}
+
+final class NetworkManager : NetworkManagerProtocol{
 
     static let shared = NetworkManager()
     

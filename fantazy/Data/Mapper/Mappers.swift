@@ -39,7 +39,7 @@ struct FootballMapper {
     static func toTeam(_ dto: FootballTeamDTO) -> Team {
         return Team(
             thumbnail: dto.teamLogo ?? "",
-            name: dto.teamName,
+            name: dto.teamName ?? "Unknown",
             coach: dto.coaches?[0].coachName ?? "",
             players: dto.players?.map(FootballMapper.toPlayer) ?? []
         )

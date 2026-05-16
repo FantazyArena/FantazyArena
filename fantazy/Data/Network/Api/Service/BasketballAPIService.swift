@@ -3,10 +3,14 @@ import Alamofire
 final class BasketballAPIService: SportService {
 
     static let shared = BasketballAPIService()
-    private init() {}
-
+    private let session: Session
     private let baseURL = ApiConfig.BASKETBALL_BASE_URL
+    
+    private init(session: Session = .default ) {
+        self.session = session
+    }
 
+    
     func getLeagues() async throws -> [League] {
         let dtos: [BasketballLeagueDTO] = try await fetch(endpoint: LeaguesEndpoint())
         return dtos.map(BasketballMapper.toLeague)

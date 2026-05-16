@@ -1,0 +1,11 @@
+{
+    "success": 1,
+    "result": [
+        {
+            "league_key": 1,
+            "league_name": "NBA",
+            "country_key": 1,
+            "country_name": "USA"
+        }
+    ]
+}
